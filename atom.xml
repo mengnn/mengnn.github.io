@@ -5,9 +5,9 @@
   <subtitle>前端开发工程师</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://mengnn.cn/"/>
   <updated>2019-07-26T07:37:42.733Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://mengnn.cn/</id>
   
   <author>
     <name>孟繁胜游</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>做行动的巨人，语言的矮子</title>
-    <link href="http://yoursite.com/2019/07/26/page/"/>
-    <id>http://yoursite.com/2019/07/26/page/</id>
+    <link href="https://mengnn.cn/2019/07/26/page/"/>
+    <id>https://mengnn.cn/2019/07/26/page/</id>
     <published>2019-07-26T03:37:17.039Z</published>
     <updated>2019-07-26T07:37:42.733Z</updated>
     
@@ -33,16 +33,16 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://mengnn.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://mengnn.cn/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
   <entry>
     <title>奔程</title>
-    <link href="http://yoursite.com/2019/07/24/hello-world/"/>
-    <id>http://yoursite.com/2019/07/24/hello-world/</id>
+    <link href="https://mengnn.cn/2019/07/24/hello-world/"/>
+    <id>https://mengnn.cn/2019/07/24/hello-world/</id>
     <published>2019-07-24T07:20:16.320Z</published>
     <updated>2019-07-26T08:14:48.690Z</updated>
     
@@ -55,7 +55,7 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://mengnn.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
