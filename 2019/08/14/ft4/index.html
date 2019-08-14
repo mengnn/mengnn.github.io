@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mengniannian.cn">
-  <title>Archives: 2019/8 | 孟繁胜游的博客</title>
+  <title>前端包管理Bower入门教程 | 孟繁胜游的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta name="keywords" content="前端博客,JavaScript,html5,css3,Jquery,NodeJs,bootstrap,jQuery,angularjs,随笔，诗词，生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="孟繁胜游的博客">
-<meta property="og:url" content="https://mengniannian.cn/archives/2019/08/index.html">
+  <meta name="description" content="Bower了解bower是twitter的一个开源项目，使用nodejs开发，用于web包管理。如果越来越多得开源项目都托管在github上，bower只需要将github上项目加上一个配置文件既可以使用bower方式使用安装包。作为包管理，bower能提供添加新web包，更新web包，删除web包，发布web包功能，管理包依赖。web包通常认为由html+css+javascript构成。 环境">
+<meta name="keywords" content="前端,html5,css,bower">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端包管理Bower入门教程">
+<meta property="og:url" content="https://mengniannian.cn/2019/08/14/ft4/index.html">
 <meta property="og:site_name" content="孟繁胜游的博客">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="Bower了解bower是twitter的一个开源项目，使用nodejs开发，用于web包管理。如果越来越多得开源项目都托管在github上，bower只需要将github上项目加上一个配置文件既可以使用bower方式使用安装包。作为包管理，bower能提供添加新web包，更新web包，删除web包，发布web包功能，管理包依赖。web包通常认为由html+css+javascript构成。 环境">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://pw7sjgueh.bkt.clouddn.com/ft4-1.png">
+<meta property="og:image" content="http://pw7sjgueh.bkt.clouddn.com/ft4-2.png">
+<meta property="og:updated_time" content="2019-08-14T13:20:16.052Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="孟繁胜游的博客">
-<meta name="twitter:description" content="个人技术博客">
+<meta name="twitter:title" content="前端包管理Bower入门教程">
+<meta name="twitter:description" content="Bower了解bower是twitter的一个开源项目，使用nodejs开发，用于web包管理。如果越来越多得开源项目都托管在github上，bower只需要将github上项目加上一个配置文件既可以使用bower方式使用安装包。作为包管理，bower能提供添加新web包，更新web包，删除web包，发布web包功能，管理包依赖。web包通常认为由html+css+javascript构成。 环境">
+<meta name="twitter:image" content="http://pw7sjgueh.bkt.clouddn.com/ft4-1.png">
   
   
     <link rel="icon" href="/assets/img/mnn.jpg">
@@ -169,36 +173,131 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ft4" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/14/ft4/" class="archive-article-date">
-  	<time datetime="2019-08-14T13:04:45.305Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/14/ft4/">前端包管理Bower入门教程</a>
+    <h1 class="article-title" itemprop="name">
+      前端包管理Bower入门教程
     </h1>
   
 
-        <div class="article-info info-on-right">
+        
+        <a href="/2019/08/14/ft4/" class="archive-article-date">
+  	<time datetime="2019-08-14T13:04:45.305Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
+</a>
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">904字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">3分</span>
+      </span>
+    </span>
+</div>
+
           
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Bower了解"><a href="#Bower了解" class="headerlink" title="Bower了解"></a>Bower了解</h2><p>bower是twitter的一个开源项目，使用nodejs开发，用于web包管理。如果越来越多得开源项目都托管在github上，bower只需要将github上项目加上一个配置文件既可以使用bower方式使用安装包。作为包管理，bower能提供添加新web包，更新web包，删除web包，发布web包功能，管理包依赖。web包通常认为由html+css+javascript构成。</p>
+<h2 id="环境依赖"><a href="#环境依赖" class="headerlink" title="环境依赖"></a>环境依赖</h2><p>bower是依赖于 Node.js的，所以安装之前需要Node环境，<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js官网</a></p>
+<p>安装最新版本，然后命令行中严重是否安装成功</p>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v  //版本号查询  我的是v10.16.0</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装Bower"><a href="#安装Bower" class="headerlink" title="安装Bower"></a>安装Bower</h2><p><a href="https://bower.io/" target="_blank" rel="noopener">bower官网</a></p>
+<p>优点：项目依赖安装，可以固定资源文件，支持资源版本升级，可以支持缓存安装等<br>全局安装bower</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g bower  //如果你觉得npm安装较慢，可以用淘宝镜像cnpm安装</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，查询版本号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower -v  //如果出现对应的版本号说明安装成功</span><br></pre></td></tr></table></figure>
+
+<h2 id="Bower-使用"><a href="#Bower-使用" class="headerlink" title="Bower 使用"></a>Bower 使用</h2><p>创建文件夹（以我的为例，创建了一个空文件夹bowerDemo），然后命令行到该空文件下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd bowerDemo</span><br></pre></td></tr></table></figure>
+
+<p>初始化bower</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower init</span><br></pre></td></tr></table></figure>
+
+<p>会提示你输入一些基本信息，根据提示按回车或者空格即可，然后会生成一个bower.json文件，用来保存该项目的配置</p>
+<p><img src="http://pw7sjgueh.bkt.clouddn.com/ft4-1.png" alt></p>
+<h2 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h2><p>接下来你就可以安装插件了，比如安装下载jquery,在根目录先输入下面命令安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower install jquery --save</span><br></pre></td></tr></table></figure>
+
+<p>安装成功后你就会在跟文件夹里看到一个bower_components文件夹，这也是插件默认的文件夹</p>
+<p>你也可以输入命令查询包的信息，输入命令后会出现包的所以版本，然后你就可以更新安装不同的版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bower info jquery  //包的信息</span><br><span class="line">bower update   //包的更新</span><br><span class="line">bower uninstall jquery  //包的卸载</span><br></pre></td></tr></table></figure>
+
+<p>这就是一个简单的bower的安装以及插件包的下载</p>
+<p>当然，这些仅仅是不够的，作为一个前端开发，有时候会写很多html，css，js页面，甚至每次创建新的项目，都要用同样的模板，所以这个时候，就用到bower的注册功能，把自己的包或者插件发布到bower平台，并下载使用。</p>
+<h2 id="bower平台发布插件并下载"><a href="#bower平台发布插件并下载" class="headerlink" title="bower平台发布插件并下载"></a>bower平台发布插件并下载</h2><p>首先打标签（假设你已经把项目模板发布到github上面），在你的本地仓库根目录下运行下面命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// -a是添加 标签名，一般写版本号, -m为标签添加注释信息</span><br><span class="line">git tag -a 1.0.0 -m “version info″</span><br><span class="line"></span><br><span class="line">// –tags参数表示提交所有tag至服务器端，普通的git push origin master操作不会推送标签到服务器端</span><br><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
+
+<p>一切准备就绪后，开始注册插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bower register projectName  项目的github地址   </span><br><span class="line">eg：bower register fontend https://github.com/mengnn/fontendGet.git</span><br></pre></td></tr></table></figure>
+
+<p>这样，你的插件就注册成功了，你就可以在你的项目根目录下下载你的插件（模板），也就不用每次重复的copy</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower install  fontend --save-dev  //fontend是我注册的插件名称</span><br></pre></td></tr></table></figure>
+
+<p>运行成功，你就可以看到你的模板下载到你的项目文件夹下面，just so so！</p>
+<p>此时你的bower.json文件里面也会相对应的出来你安装的插件配置信息（版本号，名称）</p>
+<p><img src="http://pw7sjgueh.bkt.clouddn.com/ft4-2.png" alt></p>
+<p>ok，到这里就结束了，虽然现在bower已经停止维护了，但是这门技术还是存在的，当然对于“玩家”来说，实在有趣！</p>
+
+      
+
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      
+
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -222,295 +321,144 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mengniannian.cn/2019/08/14/ft4/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/12/sc3/" class="archive-article-date">
-  	<time datetime="2019-08-12T13:31:25.878Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/12/sc3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">poetry第三期</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/12/sc3/">poetry第三期</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">诗词</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bower了解"><span class="toc-number">1.</span> <span class="toc-text">Bower了解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境依赖"><span class="toc-number">2.</span> <span class="toc-text">环境依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Bower"><span class="toc-number">3.</span> <span class="toc-text">安装Bower</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bower-使用"><span class="toc-number">4.</span> <span class="toc-text">Bower 使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件安装"><span class="toc-number">5.</span> <span class="toc-text">插件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bower平台发布插件并下载"><span class="toc-number">6.</span> <span class="toc-text">bower平台发布插件并下载</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/10/page3/" class="archive-article-date">
-  	<time datetime="2019-08-10T02:19:31.351Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/10/page3/">超强台风利奇马“成功”登沪</a>
-    </h1>
+        
+    </div>
+</aside>
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/08/ft3/" class="archive-article-date">
-  	<time datetime="2019-08-08T13:04:27.792Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/08/ft3/">webpak最全的简单入门之打包css</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webpak</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/06/ft2/" class="archive-article-date">
-  	<time datetime="2019-08-06T13:10:53.106Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/06/ft2/">webpak最全的简单入门</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/05/sc2/" class="archive-article-date">
-  	<time datetime="2019-08-05T12:51:12.314Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/05/sc2/">poetry第二期</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">诗词</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">远方</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/01/ft1/" class="archive-article-date">
-  	<time datetime="2019-08-01T12:44:51.605Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/01/ft1/">神奇的标签---块级元素，行内元素，空元素</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
+      <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+var gitalk = new Gitalk({
+  clientID: '',
+  clientSecret: '',
+  repo: 'mengnn.github.io',
+  owner: 'mengnn',
+  admin: ['mengnn'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: true
+})
+
+gitalk.render('gitalk-container')
+</script>
+
   
 
-    
+
 
 
           </div>
@@ -568,8 +516,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
