@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mengniannian.cn/2019/08/18/page4/</loc>
+    <loc>https://mengniannian.cn/sc1/</loc>
+    <lastmod>2019-08-19</lastmod>
+  </url>  <url>
+    <loc>https://mengniannian.cn/sc2/</loc>
+    <lastmod>2019-08-19</lastmod>
+  </url>  <url>
+    <loc>https://mengniannian.cn/sc3/</loc>
+    <lastmod>2019-08-19</lastmod>
+  </url>  <url>
+    <loc>https://mengniannian.cn/sc4/</loc>
+    <lastmod>2019-08-19</lastmod>
+  </url>  <url>
+    <loc>https://mengniannian.cn/page4/</loc>
     <lastmod>2019-08-18</lastmod>
   </url>  <url>
-    <loc>https://mengniannian.cn/2019/08/16/ft5/</loc>
+    <loc>https://mengniannian.cn/ft5/</loc>
     <lastmod>2019-08-16</lastmod>
   </url>  <url>
-    <loc>https://mengniannian.cn/2019/08/06/ft2/</loc>
+    <loc>https://mengniannian.cn/ft2/</loc>
     <lastmod>2019-08-14</lastmod>
   </url>  <url>
-    <loc>https://mengniannian.cn/2019/08/08/ft3/</loc>
+    <loc>https://mengniannian.cn/ft3/</loc>
     <lastmod>2019-08-14</lastmod>
   </url>  <url>
-    <loc>https://mengniannian.cn/2019/08/14/ft4/</loc>
+    <loc>https://mengniannian.cn/ft4/</loc>
     <lastmod>2019-08-14</lastmod>
   </url>  <url>
-    <loc>https://mengniannian.cn/2019/08/12/sc3/</loc>
-    <lastmod>2019-08-12</lastmod>
-  </url>  <url>
-    <loc>https://mengniannian.cn/2019/08/10/page3/</loc>
+    <loc>https://mengniannian.cn/page3/</loc>
     <lastmod>2019-08-10</lastmod>
   </url>  <url>
-    <loc>https://mengniannian.cn/2019/08/05/sc2/</loc>
-    <lastmod>2019-08-05</lastmod>
-  </url>  <url>
-    <loc>https://mengniannian.cn/2019/08/01/ft1/</loc>
+    <loc>https://mengniannian.cn/ft1/</loc>
     <lastmod>2019-08-01</lastmod>
   </url>  <url>
-    <loc>https://mengniannian.cn/2019/07/31/p2/</loc>
+    <loc>https://mengniannian.cn/p2/</loc>
     <lastmod>2019-07-31</lastmod>
   </url>  <url>
-    <loc>https://mengniannian.cn/2019/07/29/sc1/</loc>
-    <lastmod>2019-07-29</lastmod>
-  </url>  <url>
-    <loc>https://mengniannian.cn/2019/07/24/hello-world/</loc>
+    <loc>https://mengniannian.cn/hello-world/</loc>
     <lastmod>2019-07-26</lastmod>
   </url>  <url>
-    <loc>https://mengniannian.cn/2019/07/26/page/</loc>
+    <loc>https://mengniannian.cn/page/</loc>
     <lastmod>2019-07-26</lastmod>
   </url>
 </urlset>
