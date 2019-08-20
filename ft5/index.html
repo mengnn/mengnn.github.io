@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://pw7sjgueh.bkt.clouddn.com/3.png">
 <meta property="og:image" content="http://pw7sjgueh.bkt.clouddn.com/4.png">
 <meta property="og:image" content="http://pw7sjgueh.bkt.clouddn.com/5.png">
-<meta property="og:updated_time" content="2019-08-16T13:51:39.172Z">
+<meta property="og:updated_time" content="2019-08-20T13:57:15.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手把手教你使用Hexo和github搭建免费个人博客网站">
 <meta name="twitter:description" content="俗话说的好“吃水不忘挖井人”，当自己体验过Hexo搭建个人网站后，也来分享一下搭建过程遇到的乐趣以及遇到的坑！ 准备工作（电脑配置工具）在搭建Hexo博客之前，首先需要简单在你电脑安装一些工具以及依赖包（具体安装方法相信大家都会，就省略了） 123首先要有一个github账号其次安装node.js，npm依赖然后安装git工具（当然电脑自身的cmd工具也是可以用的）  创建github网站（use">
@@ -229,10 +229,10 @@
 
 <h2 id="为github设置SSH-Keys"><a href="#为github设置SSH-Keys" class="headerlink" title="为github设置SSH Keys"></a>为github设置SSH Keys</h2><p>之所以配置SSH Keys，是因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。</p>
 <p>首先检查机器上是否已经存在id_rsa.pub文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/. ssh #检查本机已存在的ssh密钥</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/. ssh #检查本机已存在的ssh密钥</span><br></pre></td></tr></table></figure>
 
 <p>如果不存在那就通过命令生成秘钥</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮箱地址&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "邮箱地址"</span><br></pre></td></tr></table></figure>
 
 <p>一路回车就好（记得应该是连续3次回车），最终会生成一个文件在用户目录下，打开用户目录，找到<code>.ssh\id_rsa.pub</code>文件，记事本打开并复制里面的内容。</p>
 <p>打开你的github页面，点击setting进入—&gt; SSH and GPG keys —&gt; New SSH key,然后把你复制的内容放到Key中，其中Title中的内容可以随便填一个就ok了，如下图：</p>
@@ -240,44 +240,44 @@
 <p><img src="http://pw7sjgueh.bkt.clouddn.com/2.png" alt></p>
 <p>添加成功保存就OK了。</p>
 <h2 id="测试SSH-Key"><a href="#测试SSH-Key" class="headerlink" title="测试SSH Key"></a>测试SSH Key</h2><p>输入下面命令，测试SSH Key是否安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com # 不用改邮箱地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com # 不用改邮箱地址</span><br></pre></td></tr></table></figure>
 
 <p>如果提示<code>Are you sure you want to continue connecting (yes/no)?</code>，输入yes，然后会类似于：<code>Hi mengnn! You&#39;ve successfully authenticated, but GitHub does not provide shell 
 access.</code>的字符，说明你安装成功了。</p>
 <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>以上准备工作完成后，就要放大招了，对，接下来就是重头戏-本地部署Hexo。</p>
 <p>具体的Hexo介绍，你可以在网上查询，有很多，当然你也可以去<a href="http://hexo.io" target="_blank" rel="noopener">Hexo官网</a>详细了解，这里就不做过多介绍，不过要特别强调的是，上面的命令行以及下面的npm操作都是通过Git Bash Here操作的，所以前面写到要提前安装git工具。</p>
 <h3 id="安装前特别准备"><a href="#安装前特别准备" class="headerlink" title="安装前特别准备"></a>安装前特别准备</h3><p>特别注意的是：国内npm安装依赖实在是太慢太慢太慢了，尤其一些依赖小则一百兆左右，大则几百甚至上G兆，所以强烈推荐使用淘宝镜像cnpm安装依赖，淘宝镜像安装方法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line">//查看cnpm是否安装成功</span><br><span class="line">cnpm -v</span><br><span class="line">//如果出现版本号的信息，说明你安装成功</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line">//查看cnpm是否安装成功</span><br><span class="line">cnpm -v</span><br><span class="line">//如果出现版本号的信息，说明你安装成功</span><br></pre></td></tr></table></figure>
 
 <p>然后所有的npm操作你都可以换成cnpm操作了，当然下面为了大家不混淆，还是用的npm操作，你操作的时候全都可以替换成cnpm。</p>
 <h3 id="安装进行"><a href="#安装进行" class="headerlink" title="安装进行"></a>安装进行</h3><p>通过以下命令行全局安装Hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install -g hexo</span><br></pre></td></tr></table></figure>
 
 <h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><p>在你机器的合适位置创建项目文件夹（这个文件夹就是以后你写博客的存档文件夹，所有的内容都会在这个里面），比如我创建的是Blog，然后使用git找到Blog根目录下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd Blog</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd Blog</span><br></pre></td></tr></table></figure>
 
 <p>在项目根目录下初始化你的Hexo。</p>
 <p>在初始化之前，尤其抢到一点，你进行的hexo init操作会比较慢，耐心等待，特别特别抢到的事，你的node版本尽量要高于v.6.3.0，不然很大可能你的初始化操作进行一天也不会完成，所以，初始化之前尽可能的检查一下node版本，升级 一下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /f/Blog</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /f/Blog</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 
 <p>初始化完成后，在你根目录下面会生成一些文件</p>
 <p><img src="http://pw7sjgueh.bkt.clouddn.com/3.png" alt></p>
 <p>然后你就可以进行hexo操作生成文章以及本地运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g # 生成对应的html</span><br><span class="line">hexo s # 启动服务</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g # 生成对应的html</span><br><span class="line">hexo s # 启动服务</span><br></pre></td></tr></table></figure>
 
 <p>上面命令执行完成后，你就可以在根目录的public文件夹下看到对应的生成页面（这个文件夹的内容也会是你推送到github上的内容）</p>
 <p>hexo s是开启本地预览服务，打开浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即可看到内容。</p>
 <h3 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h3><p>以上内容都配置好了，你就可以上传到github上了（首先，<code>ssh key</code>肯定要配置好，其次，配置<code>_config.yml</code>中有关deploy的部分）</p>
 <p>在之前，我们已经配置好ssh了，所以接下来我们要配置初始化后生成的_config.yml文件，配置如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:mengnn/mengnn.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> <span class="string">git@github.com:mengnn/mengnn.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
 <p>然后你就可以上传了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d #上传本地代码到github</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d #上传本地代码到github</span><br></pre></td></tr></table></figure>
 
 <p>上传成功后你就可以访问你的github域名进行访问了，比如例子中的<a href>mengnn.github.io</a></p>
 <h3 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h3><p>第一次初始化的时候hexo已经帮我们写了一篇名为 Hello World 的文章，默认的主题比较丑。不信你可以自己打开看看。不要急，我们可以更改自己喜欢的主题。当然你可以先在官网中查看自己喜欢的主题，然后下载下来就OK了。我选择的是一个<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">yilia主题</a></p>
 <p>下载这个主题（当然，下载主题可以有很多方法，最后只要你能下载的主题文件copy到根目录下的theme文件夹中即可）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd F:\Blog\themes  #进入到根目录下的themes文件夹（这个就是主题文件夹）</span><br><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  #下载yilia主题到文件夹中</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd F:\Blog\themes  #进入到根目录下的themes文件夹（这个就是主题文件夹）</span><br><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia  #下载yilia主题到文件夹中</span><br></pre></td></tr></table></figure>
 
 <p>下载完成后，你会看到下面的内容（第一个文件就是你刚刚下载的yilia主题文件，第二个是系统默认主题文件）</p>
 <p><img src="http://pw7sjgueh.bkt.clouddn.com/4.png" alt></p>
@@ -287,14 +287,14 @@ access.</code>的字符，说明你安装成功了。</p>
 <p><img src="http://pw7sjgueh.bkt.clouddn.com/5.png" alt></p>
 <h3 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h3><p>所有的都配置好，怎么去写博客呢？</p>
 <p>定位到我们的项目文件F:\Blog\source_posts中，你所有的初始博客都是保存在这里的，包括你所有的md文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd F:\Blog\source\_posts</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd F:\Blog\source\_posts</span><br></pre></td></tr></table></figure>
 
 <p>定位之后你就可以在定位的文件夹里生成md文件了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &apos;my-first-blog&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new 'my-first-blog'</span><br></pre></td></tr></table></figure>
 
 <p>当然，你也可以自己手动在_posts文件夹中创建.md文件，进行编写</p>
 <hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: postName #文章页面上的显示名称，一般是中文</span><br><span class="line">date: 2019-08-14 22:30:16 #文章生成时间，一般不改，当然也可以任意修改</span><br><span class="line">categories: 默认分类 #分类</span><br><span class="line">tags: [tag1, tag2, tag3] #文章标签，可空，多标签请用格式，注意逗号后面有个空格</span><br><span class="line">description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: postName #文章页面上的显示名称，一般是中文</span><br><span class="line">date: 2019-08-14 22:30:16 #文章生成时间，一般不改，当然也可以任意修改</span><br><span class="line">categories: 默认分类 #分类</span><br><span class="line">tags: [tag1, tag2, tag3] #文章标签，可空，多标签请用格式，注意逗号后面有个空格</span><br><span class="line">description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
 <p>另外在这里我推荐一个个人认为比较好用的写博客工具：Typora，目前为止我发现的最好用的md文件编辑器，可以上传图片，代码块，文字编辑，主题更好等等，轻量级而且好用，<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora官网</a>，你可以下载你需要的版本。</p>
 <p>以上就是简单的Hexo+github博客的部署以及上传，相信对于入门的你来说已经足够了，后续会推出进阶版的文章，请持续关注。</p>
@@ -661,11 +661,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">手机</a>
+                <a href="javascript:void(0)" class="js-tag color3">远方</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">远方</a>
+                <a href="javascript:void(0)" class="js-tag color3">手机</a>
               </li>
              
               <li class="article-tag-list-item">
