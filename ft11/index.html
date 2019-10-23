@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://mengniannian.cn">
-  <title>Tag: html | 孟繁胜游的博客</title>
+  <title>Video.js使用心得 | 孟繁胜游的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客,前端博客,JavaScript,html5,css3,Jquery,NodeJs,bootstrap,jQuery,angularjs,随笔,诗词,生活,爬虫,python,Java,vue,angularjs,程序员,IT,Hexo,前端">
-<meta name="keywords" content="前端博客,JavaScript,html5,爬虫,python,vue,程序员,IT,Hexo,前端">
-<meta property="og:type" content="website">
-<meta property="og:title" content="孟繁胜游的博客">
-<meta property="og:url" content="https://mengniannian.cn/tags/html/index.html">
+  <meta name="description" content="Video.js是一款web视频播放器，支持html5和flash两种播放方式。 如今的前端，已经是百花齐放。各种插件，各种应用包，数不胜数。我们开发过程中，用到视频功能时，可能首先想到的就是video标签，而今天说到的Video.js，也是一款web视频播放器，支持html5和flash两种播放方式。在基于video标签的基础上，有更加出色的性能。 之所以推荐video.js，主要有以下三个原因">
+<meta name="keywords" content="前端,JavaScript,Html5,微信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Video.js使用心得">
+<meta property="og:url" content="https://mengniannian.cn/ft11/index.html">
 <meta property="og:site_name" content="孟繁胜游的博客">
-<meta property="og:description" content="个人技术博客,前端博客,JavaScript,html5,css3,Jquery,NodeJs,bootstrap,jQuery,angularjs,随笔,诗词,生活,爬虫,python,Java,vue,angularjs,程序员,IT,Hexo,前端">
+<meta property="og:description" content="Video.js是一款web视频播放器，支持html5和flash两种播放方式。 如今的前端，已经是百花齐放。各种插件，各种应用包，数不胜数。我们开发过程中，用到视频功能时，可能首先想到的就是video标签，而今天说到的Video.js，也是一款web视频播放器，支持html5和flash两种播放方式。在基于video标签的基础上，有更加出色的性能。 之所以推荐video.js，主要有以下三个原因">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-23T12:20:43.750Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="孟繁胜游的博客">
-<meta name="twitter:description" content="个人技术博客,前端博客,JavaScript,html5,css3,Jquery,NodeJs,bootstrap,jQuery,angularjs,随笔,诗词,生活,爬虫,python,Java,vue,angularjs,程序员,IT,Hexo,前端">
+<meta name="twitter:title" content="Video.js使用心得">
+<meta name="twitter:description" content="Video.js是一款web视频播放器，支持html5和flash两种播放方式。 如今的前端，已经是百花齐放。各种插件，各种应用包，数不胜数。我们开发过程中，用到视频功能时，可能首先想到的就是video标签，而今天说到的Video.js，也是一款web视频播放器，支持html5和flash两种播放方式。在基于video标签的基础上，有更加出色的性能。 之所以推荐video.js，主要有以下三个原因">
   
   
     <link rel="icon" href="/assets/img/mnn.jpg">
@@ -169,36 +170,141 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ft11" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Video.js使用心得
+    </h1>
+  
+
+        
+        <a href="/ft11/" class="archive-article-date">
+  	<time datetime="2019-10-23T12:15:44.104Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
+</a>
+        
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.3k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text">  阅读时长: </span>
+        <span class="post-count">5分</span>
+      </span>
+    </span>
+</div>
+
+          
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Video.js是一款web视频播放器，支持html5和flash两种播放方式。</p>
+<p>如今的前端，已经是百花齐放。各种插件，各种应用包，数不胜数。我们开发过程中，用到视频功能时，可能首先想到的就是video标签，而今天说到的Video.js，也是一款web视频播放器，支持html5和flash两种播放方式。在基于video标签的基础上，有更加出色的性能。</p>
+<p>之所以推荐video.js，主要有以下三个原因：</p>
+<a id="more"></a>
+
+<ol>
+<li>PC端浏览器并不支持video直接播放m3u8格式的视频。</li>
+<li>手机端各式各样的浏览器定制的video界面风格不统一，直接写原生的js控制视频兼容性较差。</li>
+<li>video.js解决以上两个问题，还可以有各种视频状态接口暴露，优化体验。</li>
+</ol>
+<h2 id="获取videojs源码"><a href="#获取videojs源码" class="headerlink" title="获取videojs源码"></a>获取videojs源码</h2><p>videojs的源码托管在<a href="https://github.com/videojs/video.js.git" target="_blank" rel="noopener">github.com</a>上面，一般来说，master分支上对应的是最新版本，点击右边绿色的clone or download 按钮可以行源码的下载，不过最新的代码未必是稳定的版本，所以这里有一个小技巧，我们可以选择最近的tag进行下载，这样相对要稳妥许多。当然你也可以去<a href="https://videojs.com" target="_blank" rel="noopener">video.js官网</a>了解更多关于video.js的内容！</p>
+<p>下载下来之后会包含很多文件，其中video.js和video-js.css就是接下来需要用到的文件。如果是放在线上用的，可以直接用压缩版本(加.min后缀的)。</p>
+<h2 id="开始使用videojs"><a href="#开始使用videojs" class="headerlink" title="开始使用videojs"></a>开始使用videojs</h2><p>首先，如果我们不用video.js，可能的代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">"videoId"</span> <span class="attr">src</span>=<span class="string">"http://vjs.zencdn.net/v/oceans.mp4"</span> <span class="attr">controls</span>=<span class="string">"controls"</span> <span class="attr">width</span>=<span class="string">"320"</span> <span class="attr">height</span>=<span class="string">"240"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"http://vjs.zencdn.net/v/oceans.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>出现的页面可能比较单一。videojs使用方式就是以类似的方式开始的，不过由于我们借助videojs对视频进行一些控制或制定，所以要先在head标签里引入video.js和video-js.css这两个文件，另外在标签上加上video-js的class名，然后就可以使用videojs了。最简单的开始：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">"videoId"</span> <span class="attr">class</span>=<span class="string">"video-js vjs-default-skin"</span> <span class="attr">src</span>=<span class="string">"http://vjs.zencdn.net/v/oceans.mp4"</span> <span class="attr">controls</span>=<span class="string">"controls"</span> <span class="attr">width</span>=<span class="string">"320"</span> <span class="attr">height</span>=<span class="string">"240"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"http://vjs.zencdn.net/v/oceans.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"> var player = videojs('videoId');</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>videojs是全局函数，它可以接收三个参数（id,options,onready）：</p>
+<p>第一个参数是video标签的id，兼容以前的方式，如果用 ‘#’+id 也是可以的，比如videojs(‘#videoId’)；</p>
+<p> 第二参数是配置选项，除了在这里给出之外，还可以通过在video标签中，通过data-setup=’{}’属性的形式给出。如果不知道要传什么内容，那么这个options可以直接省略，但是如果你要用到第三参数onready的话，这个options不能直接省略，必须要用{}进行占位；</p>
+<p>第三个参数实际上是videojs初始化完成之后的回调函数，在这个里函数里边，可以使用this引用videojs的实例对象。进行this.play(),this.pause()，this.on(‘ended’)等操作。</p>
+<p>下面有一个关于onready的例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    var options = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    var player = videojs('videoId', options, function onPlayerReady() &#123;</span><br><span class="line">        videojs.log('播放器已经准备好了!');</span><br><span class="line"></span><br><span class="line"><span class="xml">        // In this context, `this` is the player that was created by Video.js.<span class="tag">&lt;<span class="name">br</span>&gt;</span>  // 注意，这个地方的上下文， `this` 指向的是Video.js的实例对像player</span></span><br><span class="line">        this.play();</span><br><span class="line"></span><br><span class="line"><span class="xml">        // How about an event listener?<span class="tag">&lt;<span class="name">br</span>&gt;</span>  // 如何使用事件监听？</span></span><br><span class="line">        this.on('ended', function() &#123;</span><br><span class="line">            videojs.log('播放结束了!');</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>对于视频播放来说，常用的功能有：</p>
+<ol>
+<li><p>播放   this.play()</p>
+</li>
+<li><p>停止   – video没有stop方法，可以用pause 暂停获得同样的效果</p>
+</li>
+<li><p>暂停   this.pause()</p>
+</li>
+<li><p>销毁  this.dispose()</p>
+</li>
+<li><p>监听  this.on(‘click’,fn)</p>
+</li>
+<li><p>触发事件this.trigger(‘dispose’)</p>
+</li>
+</ol>
+<p>….</p>
+<p>以上的this是指在onPlayerReady函数中执行。</p>
+<h2 id="options参数"><a href="#options参数" class="headerlink" title="options参数"></a>options参数</h2><p>有两种方式可以改变videojs的行为：</p>
+<ol>
+<li><p>通过添加video标签的data-setup属性：&lt;video data-setup=’{“autoplay”:”true”,…..}’</p>
+</li>
+<li><p>var player = videojs(‘videoId’,{autoplay:true,….}) , 直接传入options</p>
+<p>由于第一种方式是写在html标签中，通过JSON.parse解析，性能低，还容易报错。个人更倾向于方法2.  </p>
+</li>
+</ol>
+<p>这里有大量关于options的配置参数：<a href="http://docs.videojs.com/tutorial-options.html" target="_blank" rel="noopener">http://docs.videojs.com/tutorial-options.html</a></p>
+<p>常用几个项有：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">autoplay :  true/false   播放器准备好之后，是否自动播放 【默认false】</span><br><span class="line">controls : true/false 是否拥有控制条 【默认true】,如果设为false ,那么只能通过api进行控制了。也就是说界面上不会出现任何控制按钮     </span><br><span class="line">height: 视频容器的高度，字符串或数字 单位像素  比如： height:300 or height:&apos;300px&apos; </span><br><span class="line">width: 视频容器的宽度, 字符串或数字 单位像素</span><br><span class="line">loop : true/false 视频播放结束后，是否循环播放</span><br><span class="line">muted : true/false 是否静音 </span><br><span class="line">poster: 播放前显示的视频画面，播放开始之后自动移除。通常传入一个URL</span><br><span class="line">preload:预加载 </span><br><span class="line">    auto 自动</span><br><span class="line">    metadata 元数据信息 ，比如视频长度，尺寸等</span><br><span class="line">　　none  不预加载任何数据，直到用户开始播放才开始下载</span><br><span class="line">children: Array | Object  可选子组件  从基础的Component组件继承而来的子组件，数组中的顺序将影响组件的创建顺序</span><br></pre></td></tr></table></figure>
+
+
+      
+
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/ft3/" class="archive-article-date">
-  	<time datetime="2019-08-08T13:04:27.792Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/ft3/">webpak最全的简单入门之打包css</a>
-    </h1>
-  
+        <div class="declare" hidden="hidden"></div>
+      
 
-        <div class="article-info info-on-right">
-          
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -208,133 +314,158 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Html5</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">webpak</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">微信</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mengniannian.cn/ft11/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/ft2/" class="archive-article-date">
-  	<time datetime="2019-08-06T13:10:53.106Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-06</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/ft10/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">解决Html5，Audio音频在微信中不能自动播放问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/ft2/">webpak最全的简单入门</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#获取videojs源码"><span class="toc-number">1.</span> <span class="toc-text">获取videojs源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开始使用videojs"><span class="toc-number">2.</span> <span class="toc-text">开始使用videojs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#options参数"><span class="toc-number">3.</span> <span class="toc-text">options参数</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/ft1/" class="archive-article-date">
-  	<time datetime="2019-08-01T12:44:51.605Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/ft1/">神奇的标签---块级元素，行内元素，空元素</a>
-    </h1>
+        
+    </div>
+</aside>
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+
+  
+      <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
+<script>
+var gitalk = new Gitalk({
+  clientID: '',
+  clientSecret: '',
+  repo: 'mengnn.github.io',
+  owner: 'mengnn',
+  admin: ['mengnn'],
+  id: md5(window.location.pathname),
+  distractionFreeMode: true
+})
+
+gitalk.render('gitalk-container')
+</script>
+
+  
+
+
 
 
           </div>
@@ -392,9 +523,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
