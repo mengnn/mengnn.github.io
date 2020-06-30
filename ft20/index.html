@@ -5,21 +5,27 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="https://mengniannian.cn">
-  <title>poetry第二期 | 孟繁胜游的博客</title>
+  <link rel="dns-prefetch" href="https://mengnn.cn">
+  <title>Laragon快速搭建本地开发环境 | 孟繁胜游的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="远方不远但很长，我还一直在路上。可能这就是我当时写这首《远方》时的心境吧。这么些年过去了，还一直在路上，从未敢放慢脚步。是呀，远方是一个未知的目的地，我也无时无刻的在鼓励着自己前行。也许路上是荆棘满地，也许是百花盛开，只有经历了才知道它的难能可贵。 其实，当代的人们，就是太多的奔波在远方的路上，匆匆忙忙，却不知，身边的人，身边的事，身边的风景才是最美的，而我们，更应该放慢脚步，给自己的灵魂一个追上">
-<meta name="keywords" content="随笔,诗词,远方">
+  <meta name="description" content="随着时代的发展，前端技术的更新迭代。现在得前端开发已经不是几年前的那个小屁孩了。越来越偏向后端化，在技术领域的地步也越来越重要。 所以开发过程中都会需要配置一些开发环境，虽然用的不是很多，但是必不可少的。对于那些使用 Windows 操作系统的同学来说，Homestead 和 LaraDock 虽说支持 Windows 系统，但是对初学者来说，安装配置起来还是有一定复杂度的，难免有些磕磕跘跘，遇到">
+<meta name="keywords" content="前端,JavaScript,Html5,css3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="poetry第二期">
-<meta property="og:url" content="https://mengniannian.cn/2019/08/05/sc2/index.html">
+<meta property="og:title" content="Laragon快速搭建本地开发环境">
+<meta property="og:url" content="https://mengnn.cn/ft20/index.html">
 <meta property="og:site_name" content="孟繁胜游的博客">
-<meta property="og:description" content="远方不远但很长，我还一直在路上。可能这就是我当时写这首《远方》时的心境吧。这么些年过去了，还一直在路上，从未敢放慢脚步。是呀，远方是一个未知的目的地，我也无时无刻的在鼓励着自己前行。也许路上是荆棘满地，也许是百花盛开，只有经历了才知道它的难能可贵。 其实，当代的人们，就是太多的奔波在远方的路上，匆匆忙忙，却不知，身边的人，身边的事，身边的风景才是最美的，而我们，更应该放慢脚步，给自己的灵魂一个追上">
+<meta property="og:description" content="随着时代的发展，前端技术的更新迭代。现在得前端开发已经不是几年前的那个小屁孩了。越来越偏向后端化，在技术领域的地步也越来越重要。 所以开发过程中都会需要配置一些开发环境，虽然用的不是很多，但是必不可少的。对于那些使用 Windows 操作系统的同学来说，Homestead 和 LaraDock 虽说支持 Windows 系统，但是对初学者来说，安装配置起来还是有一定复杂度的，难免有些磕磕跘跘，遇到">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-05T12:50:43.884Z">
+<meta property="og:image" content="d:%5CDesktop%5Cl1.png">
+<meta property="og:image" content="d:%5CDesktop%5Cl2.png">
+<meta property="og:image" content="d:%5CDesktop%5Cl3.png">
+<meta property="og:image" content="d:%5CDesktop%5Cl4.png">
+<meta property="og:image" content="d:%5CDesktop%5Cl5.png">
+<meta property="og:updated_time" content="2020-06-30T11:55:34.416Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="poetry第二期">
-<meta name="twitter:description" content="远方不远但很长，我还一直在路上。可能这就是我当时写这首《远方》时的心境吧。这么些年过去了，还一直在路上，从未敢放慢脚步。是呀，远方是一个未知的目的地，我也无时无刻的在鼓励着自己前行。也许路上是荆棘满地，也许是百花盛开，只有经历了才知道它的难能可贵。 其实，当代的人们，就是太多的奔波在远方的路上，匆匆忙忙，却不知，身边的人，身边的事，身边的风景才是最美的，而我们，更应该放慢脚步，给自己的灵魂一个追上">
+<meta name="twitter:title" content="Laragon快速搭建本地开发环境">
+<meta name="twitter:description" content="随着时代的发展，前端技术的更新迭代。现在得前端开发已经不是几年前的那个小屁孩了。越来越偏向后端化，在技术领域的地步也越来越重要。 所以开发过程中都会需要配置一些开发环境，虽然用的不是很多，但是必不可少的。对于那些使用 Windows 操作系统的同学来说，Homestead 和 LaraDock 虽说支持 Windows 系统，但是对初学者来说，安装配置起来还是有一定复杂度的，难免有些磕磕跘跘，遇到">
+<meta name="twitter:image" content="d:%5CDesktop%5Cl1.png">
   
   
     <link rel="icon" href="/assets/img/mnn.jpg">
@@ -170,20 +176,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-sc2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ft20" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      poetry第二期
+      Laragon快速搭建本地开发环境
     </h1>
   
 
         
-        <a href="/2019/08/05/sc2/" class="archive-article-date">
-  	<time datetime="2019-08-05T12:51:12.314Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
+        <a href="/ft20/" class="archive-article-date">
+  	<time datetime="2020-02-18T09:20:24.642Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
           <div style="margin-top:10px;">
@@ -191,7 +197,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">357字</span>
+        <span class="post-count">885字</span>
       </span>
     </span>
 
@@ -200,7 +206,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">1分</span>
+        <span class="post-count">3分</span>
       </span>
     </span>
 </div>
@@ -211,12 +217,51 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>远方不远但很长，我还一直在路上。可能这就是我当时写这首《远方》时的心境吧。这么些年过去了，还一直在路上，从未敢放慢脚步。是呀，远方是一个未知的目的地，我也无时无刻的在鼓励着自己前行。也许路上是荆棘满地，也许是百花盛开，只有经历了才知道它的难能可贵。</p>
-<p>其实，当代的人们，就是太多的奔波在远方的路上，匆匆忙忙，却不知，身边的人，身边的事，身边的风景才是最美的，而我们，更应该放慢脚步，给自己的灵魂一个追上自己脚步的机会！！！</p>
+        <p>随着时代的发展，前端技术的更新迭代。现在得前端开发已经不是几年前的那个小屁孩了。越来越偏向后端化，在技术领域的地步也越来越重要。</p>
+<p>所以开发过程中都会需要配置一些开发环境，虽然用的不是很多，但是必不可少的。对于那些使用 Windows 操作系统的同学来说，Homestead 和 LaraDock 虽说支持 Windows 系统，但是对初学者来说，安装配置起来还是有一定复杂度的，难免有些磕磕跘跘，遇到这样那样的奇怪问题，可能大部分人会退而继续使用 Xampp、Wamp、phpStudy 之类集成工具。当然我之前也用过Xampp等之类的，有时候不是不太稳定，就是前期配置麻烦。所以，今天介绍的一款是更加容易使用的Windows集成开发工具，他的名字就是Laragon。</p>
+<p>首先了解一下Laragon的优点：</p>
 <a id="more"></a>
 
-<h2 id="远方"><a href="#远方" class="headerlink" title="远方"></a>远方</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">昨日的雨淋漓</span><br><span class="line"></span><br><span class="line">打湿我肩膀</span><br><span class="line"></span><br><span class="line">走在远方的路上</span><br><span class="line"></span><br><span class="line">思念太忧伤</span><br><span class="line"></span><br><span class="line">一路把哥唱</span><br><span class="line"></span><br><span class="line">唱着那北方的姑娘</span><br><span class="line"></span><br><span class="line">北方的直爽</span><br><span class="line"></span><br><span class="line">我坐在老地方</span><br><span class="line"></span><br><span class="line">抬头看天上</span><br><span class="line"></span><br><span class="line">怎么也找不到你</span><br><span class="line"></span><br><span class="line">北方姑娘</span><br><span class="line"></span><br><span class="line">只有凄凉的月光</span><br><span class="line"></span><br><span class="line">不眠的月亮</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">我走在远方的路上</span><br><span class="line"></span><br><span class="line">走过了村庄</span><br><span class="line"></span><br><span class="line">走过了山岗</span><br><span class="line"></span><br><span class="line">有说不出的凄凉</span><br><span class="line"></span><br><span class="line">走过了城市</span><br><span class="line"></span><br><span class="line">走过了生活</span><br><span class="line"></span><br><span class="line">迷失了方向</span><br><span class="line"></span><br><span class="line">我走在远方的路上</span><br><span class="line"></span><br><span class="line">从北方到南方</span><br><span class="line"></span><br><span class="line">南方的小镇上</span><br><span class="line"></span><br><span class="line">没有了歌唱</span><br><span class="line"></span><br><span class="line">只有我思念的故乡</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">北方姑娘</span><br><span class="line"></span><br><span class="line">南方的凄凉</span><br><span class="line"></span><br><span class="line">我走在远方</span><br><span class="line"></span><br><span class="line">那里有我的梦想</span><br><span class="line"></span><br><span class="line">                                                                        2015-11-07</span><br></pre></td></tr></table></figure>
-
+<ul>
+<li>美化 URL：使用 <code>app.test</code> 替代 <code>localhost/app</code></li>
+<li>可移植：可以任意移动 Laragon 目录（不同磁盘、不同电脑、或者云服务）</li>
+<li>与系统隔离：Laragon 提供了一个与操作系统隔离的环境，从而保持了系统的干净</li>
+<li>简易易用：Laragon 会自动为你完成复杂的底层配置，你可以轻松地在不同版本的 PHP、Python、Java、MySQL、Nginx、MongoDB 等软件间切换</li>
+<li>现代&amp;功能强大：基于现代化的软件架构设计，从而适用于构建现代化的 Web 应用，很多日常琐碎都可以一键帮你搞定</li>
+</ul>
+<p>作为一个集成的开发环境，Laragon 还为我们开箱提供了以下软件&amp;工具（PHP语言版本），可以省去我们逐个安装的时间，可以说很贴心了：</p>
+<ul>
+<li>Apache：老牌Web服务器</li>
+<li>Cmder：命令行工具（Windows下的终端模拟器）</li>
+<li>Composer：PHP 包管理器</li>
+<li>Git：分布式版本控制软件</li>
+<li>HeidiSQL：免费的数据库管理工具（支持MySQL、MSSQL、Postgres）</li>
+<li>Laragon：管理开发环境提供的工具/服务的平台</li>
+<li>Memcached：老牌缓存系统</li>
+<li>MySQL：最流行的开源数据库系统</li>
+<li>Nginx：高性能Web服务器</li>
+<li>Ngrok：安全的内网穿透利器（外网访问内网站点）</li>
+<li>Node.js：能够在服务器端运行JavaScript的开放源代码、跨平台JavaScript 运行环境</li>
+<li>Notepad++：支持各种编程语言的文本编辑器</li>
+<li>PHP：包含最新稳定版本的PHP</li>
+<li>PuTTY：一个免费小巧的SSH客户端</li>
+<li>Redis：可以持久化的键值对存储系统（可用于实现缓存、NoSQL、队列等）</li>
+<li>Sendmail：邮件发送代理软件</li>
+<li>Telnet</li>
+<li>WinSCP：免费的SFTP&amp;FTP客户端</li>
+<li>Yarn：NPM 包管理器</li>
+</ul>
+<p>接下来我们可以了解一下安装使用情况。</p>
+<p>我们可以去Laragon中文官网页面下载我们需要的对应的安装包，下载下载来后，就像你平常安装其他软件一样，运行exe文件就OK了，可以随意选择安装目录。</p>
+<p><img src="D:%5CDesktop%5Cl1.png" alt></p>
+<p>一路Next，但是要注意的是，一定要勾选Auto virtual hosts下面一项，其他的根据你的喜好来就好了。</p>
+<p><img src="D:%5CDesktop%5Cl2.png" alt></p>
+<p>然后下一步点击安装即可。下面是 Laragon 启动后的主界面：</p>
+<p><img src="D:%5CDesktop%5Cl3.png" alt></p>
+<p>要访问数据库，可以在主界面点击「Database」按钮：</p>
+<p><img src="D:%5CDesktop%5Cl4.png" alt></p>
+<p>默认数据库是 Laragon，用户名是 root，密码是空字符串，点击「打开」按钮，就可以访问这个默认的数据库：</p>
+<p><img src="D:%5CDesktop%5Cl5.png" alt></p>
 
       
 
@@ -229,7 +274,7 @@
           
           <br>
           <strong>本文链接：</strong>
-          https://mengniannian.cn/2019/08/05/sc2/
+          https://mengnn.cn/ft20/
           <br>
           <strong>版权声明：</strong>
           本作品采用
@@ -279,15 +324,19 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">诗词</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">远方</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Html5</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">css3</a>
         		</li>
       		
 		</ul>
@@ -343,7 +392,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mengniannian.cn/2019/08/05/sc2/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://mengnn.cn/ft20/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -358,18 +407,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/06/ft2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/ft21/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          webpak最全的简单入门
+          获取手机号验证码倒计时
         
       </div>
     </a>
   
   
-    <a href="/2019/08/01/ft1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">神奇的标签---块级元素，行内元素，空元素</div>
+    <a href="/ft16/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">自定义数十种多彩多样滚动条样式</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -396,7 +445,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#远方"><span class="toc-number">1.</span> <span class="toc-text">远方</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -449,7 +498,7 @@ gitalk.render('gitalk-container')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 孟繁胜游
+    		&copy; 2020 孟繁胜游
     	</div>
       	<div class="footer-right">
       		<a href="https://mengnn.github.io/" >天道酬勤</a>
@@ -565,11 +614,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Html5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">html5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ios</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">css3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,27 +658,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">bower</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">诗词</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">远方</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">生活</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,7 +670,47 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Yarn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">手机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">生活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">诗词</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">远方</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">sass</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">less</a>
               </li>
             
             <div class="clearfix"></div>
