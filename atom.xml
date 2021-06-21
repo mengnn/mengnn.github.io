@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mengnn.cn/"/>
-  <updated>2021-06-15T13:44:01.863Z</updated>
+  <updated>2021-06-21T13:42:17.335Z</updated>
   <id>https://mengnn.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>快速切换Node版本之版本过高造成Hexo上传报错</title>
+    <link href="https://mengnn.cn/ft24/"/>
+    <id>https://mengnn.cn/ft24/</id>
+    <published>2021-06-21T13:40:21.102Z</published>
+    <updated>2021-06-21T13:42:17.335Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong><em>场景分析：</em></strong>前段时间通过hexo命令上传项目到git突然发现会报错，而且之前的项目也会出现空白页。经过一顿操作后发现，node.js的版本过高，导致hexo命令失效。 目前hexo不支持高版本，只能通过降级解决问题。 所以接下来就关乎到node版本的切换控制管理了。</p><p><strong><em>nvm：全名node.js version management，是一个node的版本管理工具</em></strong></p><h3 id="第一步：卸载你的NodeJs。"><a href="#第一步：卸载你的NodeJs。" class="headerlink" title="第一步：卸载你的NodeJs。"></a>第一步：卸载你的NodeJs。</h3><p>将电脑现在装的node进行卸载，最好是删除所有关于node的文件及内容</p><a id="more"></a><h3 id="第二步：安装nvm"><a href="#第二步：安装nvm" class="headerlink" title="第二步：安装nvm"></a>第二步：安装nvm</h3><p>通过Github服务器<a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="noopener">下载安装</a></p><p>下载完成后，按照安装操作一步一步安装就好了，很简单。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nvm-noinstall.zip： 这个是绿色免安装版本，但是使用之前需要配置</span><br><span class="line">nvm-setup.zip：这是一个安装包，下载之后点击安装，无需配置就可以使用，方便。</span><br><span class="line">Source code(zip)：zip压缩的源码</span><br><span class="line">Sourc code(tar.gz)：tar.gz的源码，一般用于Linux系统</span><br><span class="line">建议下载nvm-setup.zip版本</span><br></pre></td></tr></table></figure><h3 id="第三步：测试nvm是否安装成功"><a href="#第三步：测试nvm是否安装成功" class="headerlink" title="第三步：测试nvm是否安装成功"></a>第三步：测试nvm是否安装成功</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在命令行中输入</span></span><br><span class="line">nvm -v  </span><br><span class="line"><span class="comment">//version 1.1.6  出现版本号，说明安装成功，接下来就可以进行下面的操作</span></span><br></pre></td></tr></table></figure><h3 id="第四步：安装并控制node版本"><a href="#第四步：安装并控制node版本" class="headerlink" title="第四步：安装并控制node版本"></a>第四步：安装并控制node版本</h3><p>一顿操作猛如虎，接下来就可以随意切换我们的node版本号了</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//首先可以通过命令来查询我们可以安装的node版本</span></span><br><span class="line">nvm list available</span><br><span class="line">nvm install <span class="number">10.5</span><span class="number">.0</span>  <span class="comment">// 安装指定的版本的nodejs</span></span><br><span class="line">nvm use <span class="number">10.5</span><span class="number">.0</span>  <span class="comment">// 使用指定版本的nodejs</span></span><br><span class="line">nvm ls   <span class="comment">// 查看目前已经安装的版本</span></span><br></pre></td></tr></table></figure><p>可以通过nvm install命令安装多个版本的nodejs，然后通过nvm use命令来切换要是用的版本号</p><p>通过切换版本号后，可以通过node -v命令来检测是否使用成功。</p><h3 id="重点：hexo-d命令提交"><a href="#重点：hexo-d命令提交" class="headerlink" title="重点：hexo  d命令提交"></a>重点：hexo  d命令提交</h3><p>当你切换到新的nodejs版本后，通过hexo提交到服务器时，有可能上传后仍然会出现空白页面的情况，接下来你只需要做下面命令装换就能解决：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将hexo g &amp;&amp; hexo d 替换为hexo deploy -g后成功更新。</span><br></pre></td></tr></table></figure><p>搬你想搬，盖你所需，码字不易，且行且珍惜！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;&lt;em&gt;场景分析：&lt;/em&gt;&lt;/strong&gt;前段时间通过hexo命令上传项目到git突然发现会报错，而且之前的项目也会出现空白页。经过一顿操作后发现，node.js的版本过高，导致hexo命令失效。 目前hexo不支持高版本，只能通过降级解决问题。 所以接下来就关乎到node版本的切换控制管理了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;nvm：全名node.js version management，是一个node的版本管理工具&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;第一步：卸载你的NodeJs。&quot;&gt;&lt;a href=&quot;#第一步：卸载你的NodeJs。&quot; class=&quot;headerlink&quot; title=&quot;第一步：卸载你的NodeJs。&quot;&gt;&lt;/a&gt;第一步：卸载你的NodeJs。&lt;/h3&gt;&lt;p&gt;将电脑现在装的node进行卸载，最好是删除所有关于node的文件及内容&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://mengnn.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JavaScript" scheme="https://mengnn.cn/tags/JavaScript/"/>
+    
+      <category term="Hexo" scheme="https://mengnn.cn/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>jquery Math对象方法</title>
@@ -512,26 +538,6 @@
     <summary type="html">
     
       &lt;p&gt;我记得那瞬间，相拥一起不会疲倦。说好彼此想念，却变成背对背怀念&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="诗词" scheme="https://mengnn.cn/tags/%E8%AF%97%E8%AF%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>poetry第七期《再忆三十分》</title>
-    <link href="https://mengnn.cn/sc7/"/>
-    <id>https://mengnn.cn/sc7/</id>
-    <published>2019-09-09T14:07:59.877Z</published>
-    <updated>2019-09-09T14:12:13.783Z</updated>
-    
-    <content type="html"><![CDATA[<p>几度夕阳红，你的容颜晒群英！</p><a id="more"></a><h2 id="再忆三十分"><a href="#再忆三十分" class="headerlink" title="再忆三十分"></a>再忆三十分</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">你熟悉的身影，</span><br><span class="line"></span><br><span class="line">勾忆我多年感情 ，</span><br><span class="line"></span><br><span class="line">本以为一个梦。</span><br><span class="line"></span><br><span class="line">几度夕阳红，</span><br><span class="line"></span><br><span class="line">你的容颜赛群英。</span><br><span class="line"></span><br><span class="line">悄悄向我走来，</span><br><span class="line"></span><br><span class="line">我已心潮澎湃。</span><br><span class="line"></span><br><span class="line">一路你驰车前奔，</span><br><span class="line"></span><br><span class="line">让我感动万分。</span><br><span class="line"></span><br><span class="line">你温柔的长发，</span><br><span class="line"></span><br><span class="line">飘落在我前身，</span><br><span class="line"></span><br><span class="line">如今我记忆犹新。</span><br><span class="line"></span><br><span class="line">虽是短短三十分，</span><br><span class="line"></span><br><span class="line">我已觉大地回春，</span><br><span class="line"></span><br><span class="line">温暖我心。</span><br><span class="line"></span><br><span class="line">如果时光能够倒转，</span><br><span class="line"></span><br><span class="line">你我再享三十分。</span><br><span class="line"></span><br><span class="line">相知相见想别离，</span><br><span class="line"></span><br><span class="line">三十分钟足念矣！</span><br><span class="line">                              </span><br><span class="line">                                                       </span><br><span class="line"></span><br><span class="line">                                                                 二0一一年十一月十四日</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;几度夕阳红，你的容颜晒群英！&lt;/p&gt;
     
     </summary>
     
