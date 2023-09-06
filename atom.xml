@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mengnn.cn/"/>
-  <updated>2023-08-31T14:16:19.828Z</updated>
+  <updated>2023-09-06T07:02:46.777Z</updated>
   <id>https://mengnn.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>uView2.0版本富文本Textarea默认不能换行问题</title>
+    <link href="https://mengnn.cn/uView2.0%E7%89%88%E6%9C%AC%E5%AF%8C%E6%96%87%E6%9C%ACTextarea%E9%BB%98%E8%AE%A4%E4%B8%8D%E8%83%BD%E6%8D%A2%E8%A1%8C%E9%97%AE%E9%A2%98/"/>
+    <id>https://mengnn.cn/uView2.0版本富文本Textarea默认不能换行问题/</id>
+    <published>2023-09-06T06:57:07.192Z</published>
+    <updated>2023-09-06T07:02:46.777Z</updated>
+    
+    <content type="html"><![CDATA[<p>前端时间开发uni-app程序的时候，突然发现升级2.0的uView框架中的文本域组件u–textarea默认不能敲换行了。纳闷了一小会儿，查了一些文档，发现是它的属性confirmType默认的参数done导致不能换行的。</p><p>解决方案就是把confirmType的值改为null就OK了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;u--textarea v-model.trim=&quot;value&quot; placeholder=&quot;请输入内容&quot; :confirmType=&quot;null&quot;&gt;&lt;/u--textarea&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;前端时间开发uni-app程序的时候，突然发现升级2.0的uView框架中的文本域组件u–textarea默认不能敲换行了。纳闷了一小会儿，查了一些文档，发现是它的属性confirmType默认的参数done导致不能换行的。&lt;/p&gt;
+&lt;p&gt;解决方案就是把confirmTyp
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://mengnn.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="uni-app" scheme="https://mengnn.cn/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>雨过天渐凉</title>
@@ -475,30 +501,6 @@
       <category term="Excel" scheme="https://mengnn.cn/tags/Excel/"/>
     
       <category term="数据分析" scheme="https://mengnn.cn/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《人间值得》读后感</title>
-    <link href="https://mengnn.cn/%E4%BA%BA%E9%97%B4%E5%80%BC%E5%BE%97/"/>
-    <id>https://mengnn.cn/人间值得/</id>
-    <published>2022-09-24T16:00:00.000Z</published>
-    <updated>2023-06-27T02:19:14.509Z</updated>
-    
-    <content type="html"><![CDATA[<p>人为什么会感到不安？对于不可预见的未来，一想到“该怎么办”“发生不好的事该怎么处理”“失败了该如何应对”时，就会感到不安，甚至失眠，甚至于对生活失去希望，那人间到底值不值得？我们辛苦一遭来到这个人世间又值不值得？</p><a id="more"></a><p>恒子老奶奶用90年的人生经历，从工作、生活、家庭中来告诉我们如何面对人生的喜怒哀乐，我们应该用什么样的态度来度过我们短暂而不同的人生。《人间值得》是由一位90岁高龄的心理医生中村恒子所著，一位年过九旬仍坚持在一线的、对工作，生活，家庭持有不同见解的老奶奶所著。她把对人生的见解，对生活的态度解析的淋漓尽致。没有华丽的辞藻，一句句普普通通的话，都能成为我们人生的座右铭。</p><h2 id="工作为了什么？"><a href="#工作为了什么？" class="headerlink" title="工作为了什么？"></a>工作为了什么？</h2><p>从本质上来说，人就是为了生活而工作，这个道理，亘古不变。而为了钱而工作，并不是可耻的事，这是理所当然的事，是了不起的事。当你面对“为了什么而工作”感到迷茫时，你就干脆而果断的告诉自己“工作只是为了赚钱养活自己而已”。这就是人为何要工作的根本。</p><p>没必要把工作当做非常严肃的事情对待，这样你就能享受工作。不要把自我价值全部建立在个工作上，带着“为身边的人略尽绵力”的想法而工作，获取会更好。饮食足以温饱，有工作需要自己，其实这样的生活刚刚好。过多的“空闲”，有时会带来负面影响，“适当忙碌”的状态反而更好。如果工作让你一直做出巨大的牺牲，那一定要果断离开，毫不犹豫。自己的人生就应该由自己做决定。</p><h2 id="必须要幸福？"><a href="#必须要幸福？" class="headerlink" title="必须要幸福？"></a>必须要幸福？</h2><p>一心想着“必须要幸福”，是完全不可能实现的。幸福与不幸福的说法，并无太大意义。“必须要幸福”，不这样想的话才会幸福，放下人生多余的行囊。</p><p>有些人对幸福与否的判断标准，往往是通过与人的比较，来确定自己幸福的标准。比如以收入高低，房子的大小，孩子的学校、成绩、外貌等来判断幸福，这毫无意义。无论你做甚，只要自己喜欢就可以，如果以“别人做什么，我也必须那样做”，一定会变得很幸苦。一字之差，却千差万别。</p><p>不要试图通过改变他人获得快乐，而是想“自己如何做才会快乐”或“怎么努力让自己在这里心情愉快地度过”。这才是应该考虑的关键。</p><p>生活中我也有过孤独和不安的时候。但不管怎样，我只能活着。如果意识到自己始终是一个人，就不会对别人心存太多期待。即使是家人也要分清彼此，强迫他人，自己和对方都很痛苦。</p><p>无论在职场还是家庭，“只要是别人给予的东西，自己就应该感谢对方”。如果以这样的心态和别人相处，人际关系就不可能出现大的问题。</p><p>如果不让过度期望“先入为主”，就会发现别的方法和途径。因此，不妨试试这样做。自己与对方保持一定的距离感，工作环境会得以改善，工作效率也会提高。</p><p>不要给幸福枷锁，这样才能更幸福。</p><h2 id="这就是自己的人生"><a href="#这就是自己的人生" class="headerlink" title="这就是自己的人生"></a>这就是自己的人生</h2><p>人毕竟是伟大的，无论遇到什么样的环境，都有可能坚定地认为“这就是自己的人生”，然后顺其自然地走下去。如果总也不顺利，那么你就要意识到，“人生本来就是这样”。“不顺”不只会光顾你的人生。如此一来，你无须改变自己的节奏，按照正常的步伐认认真真地去做，就会逐渐步入正轨，在不知不觉间走出低谷。不管怎么说，大多数事情都会得到解决，人生只能笑着走下去。</p><p>不要事事都想着咬紧牙关挺过去，只要抱着“今天这样做基本就可以了”的态度，日复一日地坚持积累。预期追求完美而挫折不断，不如以笨拙的方式坚持下去。</p><p>无论是孩子还是家庭，又或是工作，不要试图追求完美，保持一种细水长流的态度，结果会更好。生活如果没有目标，就会变得懒散。一旦决定“今天这样做”，生活一下子就会张弛有度。</p><h2 id="关于老去"><a href="#关于老去" class="headerlink" title="关于老去"></a>关于老去</h2><p>孤独地死去非常好，担心死亡的方式毫无意义。</p><p>死亡后，无论你是被称赞，还是被评论，都与死人无关，因为听不见他们在说什么。任何事情有开始就会有结果，人只要出生，就会面对死亡。所以当我们面对这些的时候，放平心态也许会让我们更快乐的老去。</p><p>人生的结果不会马上呈现，但是在每个瞬间，都有必须珍惜的事情。人生，只要能照亮某个角落就够啦。</p><p>回到开始的问题，忧虑未来于事无补，谁也无法预料未来。与其忧愁的度过每一天，不如不要太用力，坦率地接受每一天。人间，还是有很多美好的事物值得我们去用心感受的。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;人为什么会感到不安？对于不可预见的未来，一想到“该怎么办”“发生不好的事该怎么处理”“失败了该如何应对”时，就会感到不安，甚至失眠，甚至于对生活失去希望，那人间到底值不值得？我们辛苦一遭来到这个人世间又值不值得？&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="https://mengnn.cn/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="读书笔记" scheme="https://mengnn.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="人间值得" scheme="https://mengnn.cn/tags/%E4%BA%BA%E9%97%B4%E5%80%BC%E5%BE%97/"/>
     
   </entry>
   
