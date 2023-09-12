@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mengnn.cn/"/>
-  <updated>2023-09-06T07:02:46.777Z</updated>
+  <updated>2023-09-12T07:05:21.768Z</updated>
   <id>https://mengnn.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>uniCloud操作本地云函数生效操作云端云函数无效的问题</title>
+    <link href="https://mengnn.cn/uniCloud%E6%93%8D%E4%BD%9C%E6%9C%AC%E5%9C%B0%E4%BA%91%E5%87%BD%E6%95%B0%E7%94%9F%E6%95%88%E6%93%8D%E4%BD%9C%E4%BA%91%E7%AB%AF%E4%BA%91%E5%87%BD%E6%95%B0%E6%97%A0%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://mengnn.cn/uniCloud操作本地云函数生效操作云端云函数无效的问题/</id>
+    <published>2023-09-12T06:47:17.636Z</published>
+    <updated>2023-09-12T07:05:21.768Z</updated>
+    
+    <content type="html"><![CDATA[<p>uni-app应用uniCloud云开发，连接本地云函数增删改查都没有问题；放到线上测试或者本地连接云端函数时，发现增删改查会出现一些问题。比如修改显示成功，但是数据并没有真正修改过来。也就是说云函数都操作没有问题，但是数据并没有保存。</p><a id="more"></a><p>经过排查发现原因：云函数操作必须把异步改成同步的，这样才会保存修改后的数据。</p><p>比如下面的例子：</p><p>问题代码</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> db = uniCloud.database()</span><br><span class="line">exports.main = <span class="keyword">async</span> (event, context) =&gt; &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123;</span><br><span class="line">id,</span><br><span class="line">detailObject,</span><br><span class="line">imageList</span><br><span class="line">&#125; = event</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> db.collection(<span class="string">"travel_art_list"</span>).doc(id).update(&#123;</span><br><span class="line">...detailObject,</span><br><span class="line">imgArr: imageList</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>优化后（通过async await修饰符的形式，把异步操作改成同步操作，这样操作云端云函数就不会有问题）：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> db = uniCloud.database()</span><br><span class="line">exports.main = <span class="keyword">async</span> (event, context) =&gt; &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123;</span><br><span class="line">id,</span><br><span class="line">detailObject,</span><br><span class="line">imageList</span><br><span class="line">&#125; = event</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">await</span> db.collection(<span class="string">"travel_art_list"</span>).doc(id).update(&#123;</span><br><span class="line">...detailObject,</span><br><span class="line">imgArr: imageList</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>云函数在执行完之后会销毁，这个时候操作数据库请求还没有发送出来就被销毁了。所以当你更新数据库的时候，其实相当于没有更新到你需要的值。</p><p>从上面也再次看到了ES6的方便和强大支出。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;uni-app应用uniCloud云开发，连接本地云函数增删改查都没有问题；放到线上测试或者本地连接云端函数时，发现增删改查会出现一些问题。比如修改显示成功，但是数据并没有真正修改过来。也就是说云函数都操作没有问题，但是数据并没有保存。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://mengnn.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="uni-app" scheme="https://mengnn.cn/tags/uni-app/"/>
+    
+      <category term="云开发" scheme="https://mengnn.cn/tags/%E4%BA%91%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>uView2.0版本富文本Textarea默认不能换行问题</title>
@@ -473,34 +497,6 @@
       <category term="Html" scheme="https://mengnn.cn/tags/Html/"/>
     
       <category term="文本框" scheme="https://mengnn.cn/tags/%E6%96%87%E6%9C%AC%E6%A1%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python实现excel插入任意空白行</title>
-    <link href="https://mengnn.cn/python%E5%AE%9E%E7%8E%B0excel%E6%8F%92%E5%85%A5%E7%A9%BA%E7%99%BD%E8%A1%8C/"/>
-    <id>https://mengnn.cn/python实现excel插入空白行/</id>
-    <published>2022-10-11T16:00:00.000Z</published>
-    <updated>2023-06-27T02:38:34.590Z</updated>
-    
-    <content type="html"><![CDATA[<p>有没有遇到过Excel表格任意行插入不规则的任意个空白行的需求？如果内容很少还好，可以手动完成。那如果有几百上千行数据，然后每行后面都需要插入指定的无规则空白行需要怎么实现呢？手动添加那不得累死在电脑旁，不用怕，几行python代码就能搞定。</p><a id="more"></a><p>在所有python环境都配置好的情况下，本次操作只需要引入<strong>openpyxl</strong>模块。当然，如果本地没有安装<strong>openpyxl</strong>模块的，只需要执行安装即可。</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install openpyxl</span><br></pre></td></tr></table></figure><p>创建python文件，并复制下面的代码：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl</span><br><span class="line"></span><br><span class="line">fileName = <span class="string">"../data/测试数据.xlsx"</span></span><br><span class="line">workbook = openpyxl.load_workbook(fileName)  <span class="comment"># 返回一个workbook数据类型的值</span></span><br><span class="line">ws = workbook.active</span><br><span class="line"><span class="comment"># sheet = workbook.active  # 获取活动表 默认第一个表</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取名字为Sheet1的表</span></span><br><span class="line">sheet = workbook[<span class="string">"Sheet1"</span>]</span><br><span class="line"><span class="comment"># print('当前活动表是：' + str(sheet))</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义 获取某一列的值</span></span><br><span class="line">rowValue = []</span><br><span class="line"><span class="comment"># 获取k列的值</span></span><br><span class="line"><span class="keyword">for</span> cell <span class="keyword">in</span> sheet[<span class="string">'k'</span>]:</span><br><span class="line">    rowValue.append(cell.value)</span><br><span class="line"><span class="comment"># print(rowValue)</span></span><br><span class="line"><span class="comment"># 定义空行总和</span></span><br><span class="line">emptyNum = <span class="number">0</span></span><br><span class="line"><span class="comment"># 通过enumerate函数获取数组索引，index为索引，val为需要添加的空行</span></span><br><span class="line"><span class="keyword">for</span> index,val <span class="keyword">in</span> enumerate(rowValue):</span><br><span class="line">    <span class="comment"># print(index,val)</span></span><br><span class="line">    <span class="comment"># 第几行下面插入多少：k+1+(k-1列的n之和)  第k行 + 1 + (k-1)的空行总和</span></span><br><span class="line">    <span class="keyword">if</span> val &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="comment"># idx 为第几行插入 因为inx 从1开始，而index从0，故计算的时候要先+1</span></span><br><span class="line">        sheet.insert_rows(idx=(index+<span class="number">1</span>+<span class="number">1</span>+emptyNum), amount=val)</span><br><span class="line">    emptyNum += val</span><br><span class="line">    <span class="comment"># print(emptyNum)</span></span><br><span class="line"></span><br><span class="line">workbook.save(fileName)</span><br></pre></td></tr></table></figure><p>注意：</p><p>你需要在你要操作的Excel表格中某一列填写你需要在某一行下面要添加空白行的数量，不添加写0即可。此Demo中，在第K列标记了每行下面需要添加的空白行个数。</p><p>fileName：为你要操作的Excel文件</p><p>workbook[“Sheet1”]：Sheet1表示你要操作的Excel文件中的名字为Sheet1的表</p><p>sheet[‘k’]：k即为标记每行添加空白行个数的一列</p><hr><p><a href="https://openpyxl.readthedocs.io/en/stable/index.html​" target="_blank" rel="noopener">openpyxl文档</a></p><p><a href="https://www.python.org/" target="_blank" rel="noopener">python官网</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有没有遇到过Excel表格任意行插入不规则的任意个空白行的需求？如果内容很少还好，可以手动完成。那如果有几百上千行数据，然后每行后面都需要插入指定的无规则空白行需要怎么实现呢？手动添加那不得累死在电脑旁，不用怕，几行python代码就能搞定。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="https://mengnn.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="python" scheme="https://mengnn.cn/tags/python/"/>
-    
-      <category term="python案例" scheme="https://mengnn.cn/tags/python%E6%A1%88%E4%BE%8B/"/>
-    
-      <category term="Excel" scheme="https://mengnn.cn/tags/Excel/"/>
-    
-      <category term="数据分析" scheme="https://mengnn.cn/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
