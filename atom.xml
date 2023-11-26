@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mengnn.cn/"/>
-  <updated>2023-11-19T09:16:32.300Z</updated>
+  <updated>2023-11-26T08:42:12.123Z</updated>
   <id>https://mengnn.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>uniapp+uView2.0自定义底部tabbar导航</title>
+    <link href="https://mengnn.cn/uniapp%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BA%95%E9%83%A8tabbar%E5%AF%BC%E8%88%AA/"/>
+    <id>https://mengnn.cn/uniapp自定义底部tabbar导航/</id>
+    <published>2023-11-25T16:00:00.000Z</published>
+    <updated>2023-11-26T08:42:12.123Z</updated>
+    
+    <content type="html"><![CDATA[<p>在正式开始代码之前，我们首先了解一下<code>uni-app</code>的<code>easycom</code>机制。传统vue项目开发，引用组件需要<code>导入 - 注册 - 使用</code>三个步骤。而<code>uni-app</code>的<code>easycom</code>机制，将组件引用进一步优化，开发者只管使用，无需考虑导入和注册。</p><a id="more"></a><p>即只需要按照uni-app的easycom机制规则（根目录下创建components文件夹，components文件夹内创建组件文件夹，组件文件夹内创建和文件夹同名的vue文件）创建组件，可以在页面中直接引用组件，省去了导入注册的过程。但是需要注意的是：<strong>组件命名规则为“my-component”，通过“-”连接的方式命名</strong>。</p><h3 id="配置pages-json文件，确定tabbar页面"><a href="#配置pages-json文件，确定tabbar页面" class="headerlink" title="配置pages.json文件，确定tabbar页面"></a>配置pages.json文件，确定tabbar页面</h3><p>首先需要在根目录下的pages.json文件中配置tabbar属性，配置你的底部tabbar页面。</p><p>在属性tabBar下面配置list数组，数组中只需要配置pagePath和text即可，其他内容自定义就行。</p><p>注意：有几个tabbar页面就配置几个，否则会报错。以下面两个为例。</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// pages.json</span><br><span class="line">"tabBar": &#123;</span><br><span class="line">"list": [&#123;</span><br><span class="line">"pagePath": "pages/index/index",</span><br><span class="line">"text": "首页"</span><br><span class="line">&#125;, &#123;</span><br><span class="line">"pagePath": "pages/my/my",</span><br><span class="line">             "text": "我的"</span><br><span class="line">&#125;]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure><h3 id="创建tabbar组件"><a href="#创建tabbar组件" class="headerlink" title="创建tabbar组件"></a>创建tabbar组件</h3><p>在项目根目录下创建<strong>components</strong>文件夹，然后在该文件下面创建同名目录的组件tab-bar，即文件夹名字为tab-bar，文件名字为tab-bar.vue。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">// tab-bar.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;view&gt;</span><br><span class="line">&lt;u-tabbar @change=&quot;changeTab&quot; :value=&quot;tabIndex&quot; :fixed=&quot;true&quot; :placeholder=&quot;true&quot; :safeAreaInsetBottom=&quot;true&quot; activeColor=&quot;#09C272&quot; inactiveColor=&quot;#7d7e80&quot;&gt;</span><br><span class="line">&lt;u-tabbar-item :text=&quot;item.text&quot; :name=&quot;item.name&quot; icon=&quot;home&quot; v-for=&quot;item in tabList&quot; v-bind:key=&quot;item.name&quot; @click=&quot;tabClick(item.path)&quot;&gt;&lt;/u-tabbar-item&gt;</span><br><span class="line">&lt;/u-tabbar&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">name: &apos;tabbar&apos;,</span><br><span class="line">props: &#123;</span><br><span class="line">tabIndex: &#123;</span><br><span class="line">type: Number,</span><br><span class="line">default: 0</span><br><span class="line">&#125;</span><br><span class="line">&#125;,</span><br><span class="line">data() &#123;</span><br><span class="line">return &#123;</span><br><span class="line">// tabIndex: &apos;/pages/index/index&apos;,</span><br><span class="line">tabList: [</span><br><span class="line">&#123;</span><br><span class="line">text: &apos;首页&apos;,</span><br><span class="line">name: 0,</span><br><span class="line">icon: &apos;home&apos;,</span><br><span class="line">path: &apos;/pages/index/index&apos;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">text: &apos;我的&apos;,</span><br><span class="line">name: 1,</span><br><span class="line">icon: &apos;account&apos;,</span><br><span class="line">path: &apos;/pages/my/my&apos;</span><br><span class="line">&#125;</span><br><span class="line">]</span><br><span class="line">&#125;;</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">changeTab(e) &#123;&#125;,</span><br><span class="line">tabClick(path) &#123;</span><br><span class="line">// console.log(e);</span><br><span class="line">uni.switchTab(&#123;</span><br><span class="line">url: path</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><p>上面代码为完成的配合uView框架的Tabbar 底部导航栏组件来完成的自定义文件。其中props属性中的tabIndex字段为当前选中的索引，通过tabbar主页面传递过来的索引，来选中当前标签。主要用来解决自定义组件跳转时不能及时选中组件的bug。</p><p>自定义组件中的其他参数属性，可转移<a href="https://www.uviewui.com/components/tabbar.html" target="_blank" rel="noopener">uView官网</a>详情了解，这里不做过多赘述。</p><h3 id="使用tabbar组件"><a href="#使用tabbar组件" class="headerlink" title="使用tabbar组件"></a>使用tabbar组件</h3><p>然后就是在tabbar页面引入自定义的tabbar组件。本案例中实在pages/index/index和pages/my/my文件中引入tabbar组件。以index.vue为例。直接引入”<tab-bar :tabindex="0"></tab-bar>“组件即可，然后传入当前页面索引值即可，简单明了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// pages/index/index</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;tab-bar :tabIndex=&quot;0&quot;&gt;&lt;/tab-bar&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure><p>这个时候打开你会发现，自定义导航完美适配，而且比原生导航好看很多。</p><h3 id="避免的小bug"><a href="#避免的小bug" class="headerlink" title="避免的小bug"></a>避免的小bug</h3><p>当你引入自定义tabbar导航的时候，第一次加载进去你会发现原生导航会覆盖自定的导航。所以当页面启动的时候，隐藏到原生导航即可。</p><p>在App.vue文件的onLaunch方法中使用“uni.hideTabBar()”方法，隐藏原生的底部导航即可。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// App.vue</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">onLaunch: function () &#123;</span><br><span class="line">console.log(&apos;App Launch&apos;);</span><br><span class="line">uni.hideTabBar();</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在正式开始代码之前，我们首先了解一下&lt;code&gt;uni-app&lt;/code&gt;的&lt;code&gt;easycom&lt;/code&gt;机制。传统vue项目开发，引用组件需要&lt;code&gt;导入 - 注册 - 使用&lt;/code&gt;三个步骤。而&lt;code&gt;uni-app&lt;/code&gt;的&lt;code&gt;easycom&lt;/code&gt;机制，将组件引用进一步优化，开发者只管使用，无需考虑导入和注册。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://mengnn.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="uni-app" scheme="https://mengnn.cn/tags/uni-app/"/>
+    
+      <category term="uView" scheme="https://mengnn.cn/tags/uView/"/>
+    
+      <category term="tabbar" scheme="https://mengnn.cn/tags/tabbar/"/>
+    
+  </entry>
   
   <entry>
     <title>二级域名申请部署以及免费的SSL证书部署教程</title>
@@ -463,31 +489,6 @@
       <category term="python" scheme="https://mengnn.cn/tags/python/"/>
     
       <category term="tesserorc" scheme="https://mengnn.cn/tags/tesserorc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>再识李笑来</title>
-    <link href="https://mengnn.cn/%E5%86%8D%E8%AF%86%E6%9D%8E%E7%AC%91%E6%9D%A5/"/>
-    <id>https://mengnn.cn/再识李笑来/</id>
-    <published>2022-11-25T16:00:00.000Z</published>
-    <updated>2023-06-27T02:17:58.244Z</updated>
-    
-    <content type="html"><![CDATA[<p>难以想象再次了解李笑来竟然是在技术交流群里，群友分享了<a href="https://github.com/xiaolai/xiaolai.github.io" target="_blank" rel="noopener">李笑来的Github</a>，点进去后不可一发收拾，突然对这个人有了更大的“兴趣”。</p><p>最开始听到李笑来这个人的时候，是在币圈听说的。那个时候只知道他被称为中国比特币首富，用比特币套现百亿而且还称散户为“韭菜”。<a id="more"></a>当然后来他也写了一本<a href="http://lixiaolai.com/#/the-self-cultivation-of-leeks/cn/" target="_blank" rel="noopener">《韭菜的自我修养》</a>。反正就是币圈一直有关他的传说，一面被人高高捧起，一面又备受争议。后来他又不断的成为“天使投资人”、“连续创业者”甚至创办了新的基金等，这无不做实他割韭菜的“名声”。但今天想聊的并不是他如何赚钱或者如何割韭菜的。而是读了他的《人人都能用英语》、《自学是门手艺》、《微信互联网平民创业》等书籍后，对他关于学习态度的敬佩，一夜暴富有可能是意外，但每个成功的人的成功都不是意外。</p><p>国外的一个机构关于人的一生时间的用处，如果按照我们每个人的平均寿命为 78 年计算的话：</p><blockquote><ul><li>睡觉时间加起来大概是 28.3 年；</li><li>工作时间只有 10.5 年 —— 这是大多数人可出售全部时间；</li><li>花在各种各样社交媒体上的时间有 9 年；</li><li>花在做家务的时间有 6 年；</li><li>花在吃喝上的时间有 4 年；</li><li>花在真正接受教育的时间只有 3.5 年；</li><li>花在梳妆打扮上的时间有 3 年；</li><li>花在购物上的时间有 2.5 年；</li><li>花在照顾小孩的时间有 1.5 年；</li><li>花在路上的时间有 1.3 年；……</li></ul></blockquote><p>如此计算下来，供你自由支配的时间只剩下了 9 年，仅仅 9 年！你能够用来出售的时间，即，你的所有工作时间，其实只有 10.5 年。什么叫拼？如此看来，所谓的拼，无非就是 10.5 年全部用来售出之外，另外把可用来自由支配的时间也尽量甚至全都卖掉…… 可就算你把可供你自由支配的那 9 年全部用来出售，加起来也只不过是 19.5 年，根本做不到 “翻倍”。并且，比较一下你的工作时间和睡觉时间，一个是 10.5 年，另一个是 28.3 年，是不是觉得睡觉太贵了？</p><p>对，这正是李笑来说的。“是不是觉得睡觉太贵了？”，他甚至没有周末节假日之说，一年 365 天里竟然有 115 个 法定节假日！ 也就是说，一年的 ⅓ 被 “休息” 掉了！这种觉悟，是我们应该“修炼”的。</p><p>关于学习，作为英语老师的李笑来是有发言权的。他曾在《人人都能用英语》一书中问到：中国的学生从小学甚至幼儿园开始就接触英语，学习英语，为什么到了大学毕业能说英语的寥寥无几？甚至学了十几年，反而是越学越差？也许从他的回答中能让我们醍醐灌顶：因为我们从未相信自己能够学会、学好。是呀，问问自己，我们自己真的有相信过自己能学好一门外语吗？甚至我们自己并不知道“我们从未相信过”。尽管在过去的许多年里（小学六年、中学六年、本科四年……）我们一直都在 “努力” 学习英语，可事实上收效甚微。一旦肯坦然面对，每个 “努力学英语” 十数年而不得的人都会承认：这些年其实真正学习的时间少之又少。</p><p>说白了就是我们真正用心去学英语的时间几乎可以忽略。在我们国家，高考英语词汇大纲，基本上由 3500 个左右的词汇构成。就算我们每天认真记住10个单词，那一年左右的时间完全没问题的，但你问问自己十几年的学习我们现在能记住的有几个（我问了我自己，记住的屈指可数）？所以我们上学期间每天看似都在学习英语，但其实并没有真正的接纳认真的去学习。想想汉语是一门那么难的语言你都能学会，英语同样学了那么多年为什么就没学会呢？我自己的确应该反思了。</p><p>中国有句古话：活到老，学到老。想想我们年纪轻轻难到就已经放弃学习了吗？李笑来在《自学是门手艺》中详细的记录了他学习python的过程。真的是比我们优秀的人都还在努力变得更优秀，而我们却已经快要放弃开始变得优秀。一个老师，一个投资者，一个身价百亿的年过半百的人都还在学习新的知识，新的技术。我们的确应该思考点什么了。但是比较好的一点就是我们可以站在巨人的肩膀上，从他们的经验中吸取经验。所以从李笑来学习精神上，真的从心里由衷的敬佩。</p><p>绝大多数人，终其一生都没有自学过什么。他们也不是没学过，也不是没辛苦过，但事实却是：他们在有人教、有人带、有人逼的情况下都没真学明白那些基础知识…… 更可怕的是，他们学的那些东西中，绝大多数终其一生只有一个用处：考试。于是，考试过后，那些东西就 “考过即弃”了…… 不得不承认，应试教育的确是磨灭自学能力的最有效方法。</p><p>在随后的生活里，尽管能意识到自己应该学点什么，常有 “要是我也会这个东西就好了” 的想法，但基本上百分之百以无奈结束 —— 再也没有人教、再也没有人带、再也没有人逼…… 于是，每次 “决心重新做人” 都默默地改成 “继续做人” 而后逢年过节再次许愿 “重新做人”…… 这是有趣而又尴尬的真相。</p><p>活到老学到老，希望从我们决定“重新做人”的那一刻起，已经是一个新的灵魂。</p><p><a href="https://github.com/xiaolai/xiaolai.github.io" target="_blank" rel="noopener">李笑来Github</a></p><p><a href="http://lixiaolai.com/#/everyone-can-use-english/" target="_blank" rel="noopener">《人人都能用英语》</a></p><p><a href="http://lixiaolai.com/#/the-craft-of-selfteaching/" target="_blank" rel="noopener">《自学是门手艺》</a></p><p><a href="https://github.com/xiaolai/everyones-guide-for-starting-up-on-wechat-network" target="_blank" rel="noopener">《微信互联网平民创业》</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;难以想象再次了解李笑来竟然是在技术交流群里，群友分享了&lt;a href=&quot;https://github.com/xiaolai/xiaolai.github.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;李笑来的Github&lt;/a&gt;，点进去后不可一发收拾，突然对这个人有了更大的“兴趣”。&lt;/p&gt;
-&lt;p&gt;最开始听到李笑来这个人的时候，是在币圈听说的。那个时候只知道他被称为中国比特币首富，用比特币套现百亿而且还称散户为“韭菜”。
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="https://mengnn.cn/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="生活" scheme="https://mengnn.cn/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-      <category term="读书笔记" scheme="https://mengnn.cn/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
