@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mengnn.cn/"/>
-  <updated>2023-11-26T08:42:12.123Z</updated>
+  <updated>2023-12-06T04:03:54.628Z</updated>
   <id>https://mengnn.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mpvue项目和原生微信小程序框架合并开发</title>
+    <link href="https://mengnn.cn/mpvue%E9%A1%B9%E7%9B%AE%E5%92%8C%E5%8E%9F%E7%94%9F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%90%88%E5%B9%B6%E5%BC%80%E5%8F%91/"/>
+    <id>https://mengnn.cn/mpvue项目和原生微信小程序框架合并开发/</id>
+    <published>2023-12-06T03:38:05.500Z</published>
+    <updated>2023-12-06T04:03:54.628Z</updated>
+    
+    <content type="html"><![CDATA[<p>前段时间项目遇到一个需求：需要把我们做的原生微信小程序代码和客户用<a href="http://mpvue.com/" target="_blank" rel="noopener">mpvue框架</a>开发的小程序代码进行融合。也就是之前需要两个微信小程序来回跳转传输的，现在合并到一个小程序中。</p><p>开发之前查了一些资料，不管是微信原生还是mpvue框架都支持分包。但对于一个更熟于原生框架开发的来说，更想尝试一下自己的思路方法：</p><a id="more"></a><ol><li>在mpvue项目打包之前，修改mpvue项目的跳转逻辑</li><li>对mpvue项目进行build打包</li><li>把mpvue打包后的文件和原生小程序页面进行合并</li><li>配置原生微信小程序app.json文件</li></ol><p>思路有了，就开始干，扒代码。</p><h2 id="mpvue文件"><a href="#mpvue文件" class="headerlink" title="mpvue文件"></a>mpvue文件</h2><p>针对于没有进行npm run build打包的mpvue源文件进行修改：</p><ul><li>修改appid：把appid修改成要合并后的appid</li><li>修改src文件下所有有关原来两个小程序跳转的方法（原方法可能是通过wx.navigateToMiniProgram进行小程序之间的跳转的，修改成小程序页面之间的跳转方法，比如：wx.navigateTo）</li><li>进行npm run build进行打包，这个会在dist文件夹下生成对应的打包文件（比如你提前设置好的打包命令：npm run build:wx，会在dist下面生成wx文件夹及对应打包后的文件）</li></ul><h2 id="融合原生小程序代码"><a href="#融合原生小程序代码" class="headerlink" title="融合原生小程序代码"></a>融合原生小程序代码</h2><p>要确定原生小程序pages下面的文件和mpvue项目pages文件下的文件没有命名重复的，也一定不能重复。</p><ul><li>把mpvue打包后后的wx文件夹下面的common文件夹复制到原生小程序根目录下</li><li>把mpvue打包后的wx文件夹下的pages文件夹下面的文件复制到原生小程序pages文件夹下面</li><li>修改原生小程序app.json文件内容，配置“pages”:[]项，把新增的pages文件夹下的文件路径配置在app.json文件内</li><li>把mpvue打包后的wx文件夹下的app.js文件内容复制到原生小程序的app.js文件内</li><li>把mpvue打包后的wx文件夹下的app.wxss文件内容复制到原生小程序的app.wxss文件内</li></ul><p>到这里，基本算是完成了，运行微信开发者工具看看你的项目如何。当然需要根据你的首页需求，来修改要展示的首页路径。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前段时间项目遇到一个需求：需要把我们做的原生微信小程序代码和客户用&lt;a href=&quot;http://mpvue.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;mpvue框架&lt;/a&gt;开发的小程序代码进行融合。也就是之前需要两个微信小程序来回跳转传输的，现在合并到一个小程序中。&lt;/p&gt;
+&lt;p&gt;开发之前查了一些资料，不管是微信原生还是mpvue框架都支持分包。但对于一个更熟于原生框架开发的来说，更想尝试一下自己的思路方法：&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://mengnn.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="mpvue框架" scheme="https://mengnn.cn/tags/mpvue%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="微信原生小程序" scheme="https://mengnn.cn/tags/%E5%BE%AE%E4%BF%A1%E5%8E%9F%E7%94%9F%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>uniapp+uView2.0自定义底部tabbar导航</title>
@@ -467,28 +492,6 @@
     
     
       <category term="诗词" scheme="https://mengnn.cn/tags/%E8%AF%97%E8%AF%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决tesserocr库安装报错问题</title>
-    <link href="https://mengnn.cn/%E8%A7%A3%E5%86%B3python%E4%B8%AD%E5%AE%89%E8%A3%85tesserocr%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>https://mengnn.cn/解决python中安装tesserocr遇到的问题/</id>
-    <published>2022-11-27T16:00:00.000Z</published>
-    <updated>2023-06-27T02:39:58.701Z</updated>
-    
-    <content type="html"><![CDATA[<p>不可否认python是一门强大的语言，但也不能否认的是目前来看python有太多第三方库安装失败率很高。tesserocr验证码识别库就是其中一个。今天就用一些时间来解决tesserocr安装过程中遇到的报错及麻烦（window系统）。</p><a id="more"></a><h3 id="第一步：先安装tesseract"><a href="#第一步：先安装tesseract" class="headerlink" title="第一步：先安装tesseract"></a>第一步：先安装tesseract</h3><p>在安装tesserocr库之前，需要现在电脑上安装tesseract，<a href="https://digi.bib.uni-mannheim.de/tesseract/" target="_blank" rel="noopener">下载地址传送门</a>。下载适合你自己电脑的安装包即可。然后根据你的需求一路next即可。安装这个没什么特殊 。</p><p><img src="../assets/20221128/1.png" alt="tesseract下载包"></p><p>安装完后，需要配置环境变量：<strong>桌面我的电脑（右键）→ 属性 → 高级系统设置 → 环境变量设置</strong></p><p>首先在你的用户变量path里面新增一条你得tesseract的安装路径（比如我的路径）：F:\software\tesseract</p><p><img src="../assets/20221128/2.png" alt="配置用户变量"></p><p>然后在你的系统变量里面新增一个变量名：TESSDATA_PREFIX；</p><p>变量值（你的tesseract安装目录下的tessdata目录）：F:\software\tesseract\tessdata</p><p>配置好后什么也不说，点击保存确定。</p><p><img src="../assets/20221128/3.png" alt="配置系统变量"></p><h3 id="第二步：下载匹配你电脑的tesserocr资源"><a href="#第二步：下载匹配你电脑的tesserocr资源" class="headerlink" title="第二步：下载匹配你电脑的tesserocr资源"></a>第二步：下载匹配你电脑的tesserocr资源</h3><p>上面执行完以后，本以为会顺顺利利的执行‘pip install tesserocr pillow’，结果会让你大失所望，甚至会抓耳挠腮。有点想骂街了。对，会报错，莫名其妙的报错。莫着急，咱有办法。</p><p><img src="../assets/20221128/4.png" alt="报错信息"></p><p>下载对应的tesserocr资源到本地，然后在通过命令行来执行安装这个文件。<a href="https://github.com/simonflueckiger/tesserocr-windows_build/releases" target="_blank" rel="noopener">tesserocr资源传送门</a>。同样下载和你电脑匹配的版本即可（比如我的是python3.10，window64位）。</p><p><img src="../assets/20221128/5.png" alt="下载tesserocr资源"></p><p>下载完成后，记得在cmd中运行 pip install ‘你下载的文件’，文件可以直接拖进窗口。运行后终于看到了successful的字样。开心的像个200斤的胖子。</p><p><img src="../assets/20221128/6.png" alt="cmd命令行运行"></p><p>这个时候终于可以写代码了吧，当你在PyCharm编辑器中引入“import tesserocr”的时候发现，找不到此库。怎么办？</p><h3 id="第三步：在PyCharm的终端中再执行一次安装tesserocr资源的命令"><a href="#第三步：在PyCharm的终端中再执行一次安装tesserocr资源的命令" class="headerlink" title="第三步：在PyCharm的终端中再执行一次安装tesserocr资源的命令"></a>第三步：在PyCharm的终端中再执行一次安装tesserocr资源的命令</h3><p>对，把上面的步骤在你的编辑器终端命令里在执行一次，这次你会惊奇的发现成功了。当然也看到有网友说这一步也存在报错的可能，那就把你的tesseract安装包里面的tessdata文件夹复制到你的python安装包的script目录下，在执行上面的操作。</p><p><img src="../assets/20221128/7.png" alt="pyc编辑器终端运行"></p><p>终于终于算是一切进入正规了。</p><h3 id="第四步：开始敲代码"><a href="#第四步：开始敲代码" class="headerlink" title="第四步：开始敲代码"></a>第四步：开始敲代码</h3><p>引入tesserocr库，开始你的第一个验证码识别：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> tesserocr</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个image对象,传入要识别的图片地址</span></span><br><span class="line">image = Image.open(<span class="string">'y1.png'</span>)</span><br><span class="line"><span class="comment"># tesserocr库进行识别</span></span><br><span class="line">result = tesserocr.image_to_text(image)</span><br><span class="line"><span class="comment"># 打印识别后的结果</span></span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure><p>以上就是针对一个简单的图片验证码识别的过程。识别过程很简单，主要是安装过程有太多的坑，有的python第三方库兼容性的确很差，当然也希望第三方库以及python主体在兼容方面更完善一些。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;不可否认python是一门强大的语言，但也不能否认的是目前来看python有太多第三方库安装失败率很高。tesserocr验证码识别库就是其中一个。今天就用一些时间来解决tesserocr安装过程中遇到的报错及麻烦（window系统）。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://mengnn.cn/tags/python/"/>
-    
-      <category term="tesserorc" scheme="https://mengnn.cn/tags/tesserorc/"/>
     
   </entry>
   
