@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mengnn.cn/"/>
-  <updated>2023-12-06T04:03:54.628Z</updated>
+  <updated>2023-12-29T02:48:24.339Z</updated>
   <id>https://mengnn.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>今天我吃什么：让选择不再困难</title>
+    <link href="https://mengnn.cn/eatWhat/"/>
+    <id>https://mengnn.cn/eatWhat/</id>
+    <published>2023-12-29T02:22:57.256Z</published>
+    <updated>2023-12-29T02:48:24.339Z</updated>
+    
+    <content type="html"><![CDATA[<p>选择困难症？每天都在纠结吃什么？外卖、快餐、还是食堂的那些熟悉菜式？今天，我要为大家介绍一款微信小程序——“今天我吃什么”，让你轻松解决选择困难，享受美食的乐趣！</p><p><img src="https://cdn.mengxyz.com/blog/eatWhat.png" alt></p><a id="more"></a><h3 id="一、大转盘，随心转出你的选择"><a href="#一、大转盘，随心转出你的选择" class="headerlink" title="一、大转盘，随心转出你的选择"></a>一、大转盘，随心转出你的选择</h3><p>厌倦了日常的菜式？试试“大转盘”功能！随机转出各地特色美食，给你不一样的味蕾体验。每转一次，都是新的惊喜，让你的选择充满趣味性。</p><h3 id="二、宫格选，多款美食任你挑"><a href="#二、宫格选，多款美食任你挑" class="headerlink" title="二、宫格选，多款美食任你挑"></a>二、宫格选，多款美食任你挑</h3><p>“宫格选”功能汇集了各类美食，让你在多个选项中挑选心仪的美食。无论是中式还是西式，都能满足你的口味需求。</p><h3 id="三、中国各地特色美食推荐"><a href="#三、中国各地特色美食推荐" class="headerlink" title="三、中国各地特色美食推荐"></a>三、中国各地特色美食推荐</h3><p>这款小程序汇聚了中国各地的特色美食，行走的中国美食地图。在你出游到一个陌生城市的时候，打开美食地图就能感受到当地的特色美食，帮助你快速定位选择你感兴趣的美食。</p><h3 id="四、健康饮食食谱，吃得营养又健康"><a href="#四、健康饮食食谱，吃得营养又健康" class="headerlink" title="四、健康饮食食谱，吃得营养又健康"></a>四、健康饮食食谱，吃得营养又健康</h3><p>想要吃得健康又营养？“健康饮食食谱”功能为你提供专业的饮食建议。无论是减肥塑身还是养生保健，都能找到适合你的食谱。健康早餐？营养晚餐？减肥减脂餐？一查便知，更多的选择和挑战等着你来。</p><h3 id="五、一键下单，轻松享受美食"><a href="#五、一键下单，轻松享受美食" class="headerlink" title="五、一键下单，轻松享受美食"></a>五、一键下单，轻松享受美食</h3><p>选择好心仪的美食后，只需简单操作，便可实现一键下单。无论是外卖还是堂食，都能轻松满足你的需求。让你享受美食的同时，省去选择的烦恼。</p><p>选择“今天我吃什么”，让每天的饮食选择变得简单而愉快。再也不用为吃什么而犯愁，每一天都能享受到美食带来的快乐。现在就打开微信，搜索“今天我吃什么”，开始你的美食之旅吧！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;选择困难症？每天都在纠结吃什么？外卖、快餐、还是食堂的那些熟悉菜式？今天，我要为大家介绍一款微信小程序——“今天我吃什么”，让你轻松解决选择困难，享受美食的乐趣！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.mengxyz.com/blog/eatWhat.png&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="https://mengnn.cn/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="今天我吃什么" scheme="https://mengnn.cn/tags/%E4%BB%8A%E5%A4%A9%E6%88%91%E5%90%83%E4%BB%80%E4%B9%88/"/>
+    
+      <category term="微信小程序" scheme="https://mengnn.cn/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>mpvue项目和原生微信小程序框架合并开发</title>
@@ -472,26 +497,6 @@
       <category term="python案例" scheme="https://mengnn.cn/tags/python%E6%A1%88%E4%BE%8B/"/>
     
       <category term="图虫图片批量下载" scheme="https://mengnn.cn/tags/%E5%9B%BE%E8%99%AB%E5%9B%BE%E7%89%87%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The First Snow</title>
-    <link href="https://mengnn.cn/The%20First%20snow/"/>
-    <id>https://mengnn.cn/The First snow/</id>
-    <published>2022-11-29T16:00:00.000Z</published>
-    <updated>2023-06-27T02:16:53.605Z</updated>
-    
-    <content type="html"><![CDATA[<p>推开窗的一瞬间看到了雪，有人说看到了希望，有人说看到了寒冬……</p><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">推开窗的一瞬间看到了雪</span><br><span class="line"></span><br><span class="line">时而如盐粒般晶莹</span><br><span class="line"></span><br><span class="line">时而如棉絮般轻盈</span><br><span class="line"></span><br><span class="line">有人说看到了希望</span><br><span class="line"></span><br><span class="line">有人说看到了寒冬</span><br><span class="line"></span><br><span class="line">而我，看到的是</span><br><span class="line"></span><br><span class="line">晶莹般的雪粒</span><br><span class="line"></span><br><span class="line">握在手里即逝的美丽</span><br><span class="line"></span><br><span class="line">2022年11月30日 上海-静安</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;推开窗的一瞬间看到了雪，有人说看到了希望，有人说看到了寒冬……&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="诗词" scheme="https://mengnn.cn/tags/%E8%AF%97%E8%AF%8D/"/>
     
   </entry>
   
