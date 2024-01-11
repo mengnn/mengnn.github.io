@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mengnn.cn/"/>
-  <updated>2023-12-29T02:48:24.339Z</updated>
+  <updated>2024-01-11T06:32:42.381Z</updated>
   <id>https://mengnn.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>uniapp云开发发布小程序云函数报错</title>
+    <link href="https://mengnn.cn/uniCloud%E4%BA%91%E5%BC%80%E5%8F%91%E5%8F%91%E5%B8%83%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BA%91%E5%87%BD%E6%95%B0%E6%8A%A5%E9%94%99/"/>
+    <id>https://mengnn.cn/uniCloud云开发发布小程序云函数报错/</id>
+    <published>2024-01-11T03:26:32.687Z</published>
+    <updated>2024-01-11T06:32:42.381Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>“连接本地调试服务失败，请检查客户端是否和主机在同一局域网下”</strong>，这是uniCloud云开发发布小程序后，正式环境下访问的报错情况。在本地调试都ok的情况下，以及绑定所有的域名白名单后发现的错误。</p><p><img src="https://cdn.mengxyz.com/blog/20240111-1.png" alt="报错"></p><a id="more"></a><p>经过一番开发文档查找，终于找到了原因，一个我们太容易忽略的原因：</p><p>在HBuilderX编辑器发布小程序的时候，要通过<strong>【发行】-&gt; 【小程序-】</strong>按钮进行发不到各大小程序平台的开发工具中，然后在各大小程序开发工具上面进行上传代码发布。而不是通过运行按钮，运行到各小程序平台然后进行发布。后者就会出现上面的报错情况。</p><p><img src="https://cdn.mengxyz.com/blog/20240111-2.png" alt="运行"></p><p>可以通过运行 -&gt; 运行到小程序 来进行预览，但是<strong><u>发布到正式小程序环境的时候一定要通过</u></strong>：<strong>【发行】-&gt; 【小程序】</strong>的方式。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;“连接本地调试服务失败，请检查客户端是否和主机在同一局域网下”&lt;/strong&gt;，这是uniCloud云开发发布小程序后，正式环境下访问的报错情况。在本地调试都ok的情况下，以及绑定所有的域名白名单后发现的错误。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.mengxyz.com/blog/20240111-1.png&quot; alt=&quot;报错&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://mengnn.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="uni-app" scheme="https://mengnn.cn/tags/uni-app/"/>
+    
+      <category term="uniCloud" scheme="https://mengnn.cn/tags/uniCloud/"/>
+    
+  </entry>
   
   <entry>
     <title>今天我吃什么：让选择不再困难</title>
@@ -473,30 +498,6 @@
       <category term="openai" scheme="https://mengnn.cn/tags/openai/"/>
     
       <category term="ChatGPT" scheme="https://mengnn.cn/tags/ChatGPT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python批量下载图虫风景图片</title>
-    <link href="https://mengnn.cn/python%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD%E5%9B%BE%E8%99%AB%E9%A3%8E%E6%99%AF%E5%9B%BE%E7%89%87/"/>
-    <id>https://mengnn.cn/python批量下载图虫风景图片/</id>
-    <published>2022-12-02T16:00:00.000Z</published>
-    <updated>2023-06-27T02:38:13.329Z</updated>
-    
-    <content type="html"><![CDATA[<p>夜深人静，睡不着。突然浏览到<a href="https://tuchong.com/" target="_blank" rel="noopener">图虫网站</a>有多好看的图片，然后就尝试着用python批量下载了一些（仅用于自己欣赏）。当然如果有同学跟我一样睡不着的，又想批量下载好看的图片的，不如试试下面的代码（再次声明，仅限于便于欣赏）：</p><a id="more"></a><p>本次用到的python库包括：requests（用去请求要下载的图片地址），selenium（用于抓去源代码），re（用于格式化获取到的数据），pyquery(便于数据查找)。本次案例是针对于图虫搜索框中搜索关键字“风景”的内容图片下载。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">抓去图虫网站中的风景图片</span></span><br><span class="line"><span class="string">https://stock.tuchong.com/search?availableOnly=&amp;page=1&amp;platform=image&amp;relevance_guarantee=false&amp;search_id=7172918711916020000&amp;size=100&amp;sortBy=0&amp;source=tc_pc_home_search&amp;term=%E9%A3%8E%E6%99%AF&amp;topic_id=</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.ui <span class="keyword">import</span> WebDriverWait</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">'user-agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_page</span><span class="params">(page)</span>:</span></span><br><span class="line">    <span class="comment"># driver.implicitly_wait(5)</span></span><br><span class="line">    url = <span class="string">f'https://stock.tuchong.com/search?availableOnly=&amp;page=<span class="subst">&#123;page&#125;</span>&amp;platform=image&amp;relevance_guarantee=false&amp;search_id=7172918711916020000&amp;size=100&amp;sortBy=0&amp;source=tc_pc_home_search&amp;term=%E9%A3%8E%E6%99%AF&amp;topic_id='</span></span><br><span class="line"></span><br><span class="line">    driver.get(url)</span><br><span class="line">    wait = WebDriverWait(driver, <span class="number">10</span>) <span class="comment"># 显示等待，查询到标签存在再执行</span></span><br><span class="line">    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, <span class="string">'.justified-layout'</span>)))</span><br><span class="line">    html = driver.page_source</span><br><span class="line">    <span class="comment"># doc = pq(html).find('.justified-layout .justified-layout__item .image-item').attr('data-lazy-url')</span></span><br><span class="line">    doc = pq(html)</span><br><span class="line">    items = doc.find(<span class="string">'.justified-layout .justified-layout__item'</span>).items()</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">        src = item.find(<span class="string">'.image-item'</span>).attr(<span class="string">'data-lazy-url'</span>)</span><br><span class="line">        imgSrc = re.sub(<span class="string">'//'</span>, <span class="string">''</span>, src) <span class="comment"># 获取的链接url前面带有//,去除掉</span></span><br><span class="line">        name = re.match(<span class="string">'.*?/ml/(.*?).webp'</span>, src).group(<span class="number">1</span>) <span class="comment"># 通过获取的每个url中保存一个图片名字</span></span><br><span class="line">        <span class="comment"># print(src)</span></span><br><span class="line">        <span class="comment"># print(imgSrc)</span></span><br><span class="line">        <span class="comment"># print(name)</span></span><br><span class="line">        download_img(name, imgSrc)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载图片</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_img</span><span class="params">(name, src)</span>:</span></span><br><span class="line">    src = <span class="string">'http://'</span> + src</span><br><span class="line">    img_content = requests.get(src, headers=headers).content</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'images/'</span> + name + <span class="string">'.jpg'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(img_content)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># 获取前3页的图片(每页100张)</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">        get_page(i)</span><br></pre></td></tr></table></figure><p>三次声明，案例代码仅限于用于下载欣赏。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;夜深人静，睡不着。突然浏览到&lt;a href=&quot;https://tuchong.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;图虫网站&lt;/a&gt;有多好看的图片，然后就尝试着用python批量下载了一些（仅用于自己欣赏）。当然如果有同学跟我一样睡不着的，又想批量下载好看的图片的，不如试试下面的代码（再次声明，仅限于便于欣赏）：&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://mengnn.cn/tags/python/"/>
-    
-      <category term="python案例" scheme="https://mengnn.cn/tags/python%E6%A1%88%E4%BE%8B/"/>
-    
-      <category term="图虫图片批量下载" scheme="https://mengnn.cn/tags/%E5%9B%BE%E8%99%AB%E5%9B%BE%E7%89%87%E6%89%B9%E9%87%8F%E4%B8%8B%E8%BD%BD/"/>
     
   </entry>
   
