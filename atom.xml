@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mengnn.cn/"/>
-  <updated>2024-01-11T06:32:42.381Z</updated>
+  <updated>2024-04-01T04:02:49.138Z</updated>
   <id>https://mengnn.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于uni-app框架开发的【少儿国学经典指南】小程序</title>
+    <link href="https://mengnn.cn/%E5%9F%BA%E4%BA%8Euni-app%E5%BC%80%E5%8F%91%E7%9A%84%E5%B0%91%E5%84%BF%E5%9B%BD%E5%AD%A6%E7%BB%8F%E5%85%B8%E6%8C%87%E5%8D%97%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    <id>https://mengnn.cn/基于uni-app开发的少儿国学经典指南小程序/</id>
+    <published>2024-04-01T03:36:56.270Z</published>
+    <updated>2024-04-01T04:02:49.138Z</updated>
+    
+    <content type="html"><![CDATA[<p>前一段时间基于uni-app框架开发了一款关于国学经典的小程序【<a href="https://guoxue.mengxyz.com/#/" target="_blank" rel="noopener">少儿国学经典指南</a>】，已经上架web端，微信小程序端以及抖音小程序。</p><p>关于上架小程序，可为一波三折，备案认证的却花了不少时间。但最近发现，小程序备案快了很多，而且审核什么的也比较容易通过，互联网是在不断进步的。</p><p><img src="https://cdn.mengxyz.com/blog/shaoerguoxue.png" alt></p><a id="more"></a><p>在数字化浪潮席卷的今天，传统文化与现代科技的融合已成为一种新趋势。作为一位小程序开发者，一直想开发一款结合传统国学与现代科技的工具——“少儿国学经典指南”小程序。</p><p>这款小程序旨在轻松愉快的氛围中学习国学知识，感受中华文化的博大精深。它汇聚了丰富的国学经典内容，包括《三字经》、《百家姓》、《千字文》、《论语》、《孟子》等经典读物，让我们领略传统文化的魅力。</p><p>“少儿国学经典指南”小程序的特点之一是互动性强。它采用了动画、游戏等多种形式，将国学知识融入到有趣的互动中，让孩子们在玩乐中学习，提升学习兴趣。同时，小程序还设有智能语音朗读功能，让孩子们在听读中感受语言的韵律美，培养语言表达能力。</p><p>除了内容丰富、形式多样外，这款小程序还注重个性化学习。它根据孩子们的年龄、兴趣和学习进度，智能推荐适合的学习内容，让每个孩子都能找到适合自己的学习路径。此外，小程序还提供了学习记录和进步报告功能，让家长能够随时了解孩子的学习情况，共同见证孩子的成长。</p><p>在“少儿国学经典”小程序中，孩子们不仅能够学习到国学知识，还能够培养品德修养、提升人文素养。通过学习国学经典，孩子们能够了解中华民族的历史传统、道德观念和价值观念，形成正确的世界观、人生观和价值观。</p><p>作为一款集教育性、趣味性、互动性于一体的小程序，“少儿国学经典指南”为广大家长和孩子提供了一个全新的学习平台。让我们一起携手，传承中华文化，点亮智慧之光，为孩子们的成长助力！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前一段时间基于uni-app框架开发了一款关于国学经典的小程序【&lt;a href=&quot;https://guoxue.mengxyz.com/#/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;少儿国学经典指南&lt;/a&gt;】，已经上架web端，微信小程序端以及抖音小程序。&lt;/p&gt;
+&lt;p&gt;关于上架小程序，可为一波三折，备案认证的却花了不少时间。但最近发现，小程序备案快了很多，而且审核什么的也比较容易通过，互联网是在不断进步的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.mengxyz.com/blog/shaoerguoxue.png&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://mengnn.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="uni-app" scheme="https://mengnn.cn/tags/uni-app/"/>
+    
+      <category term="小程序" scheme="https://mengnn.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>uniapp云开发发布小程序云函数报错</title>
@@ -371,9 +397,9 @@
     
       <category term="前端" scheme="https://mengnn.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="微信开发" scheme="https://mengnn.cn/tags/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/"/>
-    
       <category term="小程序" scheme="https://mengnn.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+      <category term="微信开发" scheme="https://mengnn.cn/tags/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -471,33 +497,6 @@
       <category term="python" scheme="https://mengnn.cn/tags/python/"/>
     
       <category term="pandas" scheme="https://mengnn.cn/tags/pandas/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一分钟注册并使用ChatGPT人工智能</title>
-    <link href="https://mengnn.cn/%E5%A6%82%E4%BD%95%E6%B3%A8%E5%86%8C%E4%BD%BF%E7%94%A8ChatGPT/"/>
-    <id>https://mengnn.cn/如何注册使用ChatGPT/</id>
-    <published>2022-12-07T16:00:00.000Z</published>
-    <updated>2023-06-27T02:40:33.614Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近大火的ChatGPT项目强烈的吸引了我的注意力。于是乎就尝试的注册了一个账号，然后你会发现，能让你玩一天。什么取代搜索引擎，取代程序员都不是危言耸听的话。</p><p>开始之前先简单了解一下什么是ChatGPT：OpenAI的一个人工智能项目，说是能直接生成代码、自动修复bug、在线问诊、模仿名人写作甚至代替各大搜索引擎的一个人工智能项目。ChatGPT 是 OpenAI 训练的对话式大规模<a href="https://so.csdn.net/so/search?q=语言模型&spm=1001.2101.3001.7020" target="_blank" rel="noopener">语言模型</a>，以对话的方式进行交互。它和之前的另一款模型 InstructGPT 属于同级模型，代表“GPT 3.5”代。</p><a id="more"></a><p>既然是OpenAI的项目，那肯定是注册一个OpenAI的账户。注册账户是免费的，但是注册账户时国内的电话号码是不能用的，所以，需要购买一个国外的电话号码，用来接受短信。简单明了，所需材料如下：</p><ol><li>一个邮箱（国内可行）</li><li>一个国外电话号码（用来接受验证短信）</li><li>科学上网（目前国内地址注册会提示该国家不支持，所以要学会科学上网）</li></ol><h3 id="第一步通过邮箱注册"><a href="#第一步通过邮箱注册" class="headerlink" title="第一步通过邮箱注册"></a>第一步通过邮箱注册</h3><p>点击<a href="https://chat.openai.com/auth/login" target="_blank" rel="noopener">OpenAI登录</a>界面，点击Sign up进入到注册表单页进行邮箱注册。按照注册流程一步一步进行即可。</p><p><img src="../assets/20221208/1.png" alt="登录界面"></p><p><img src="../assets/20221208/2.png" alt="注册界面"></p><p>注册信息填写完毕后，会给你发送一份邮箱，让你确认邮箱地址。然后点击确认即可。然后会跳到一个填写姓名的 页面，自己随意填写即可。</p><p><img src="../assets/20221208/3.png" alt="姓名信息"></p><p>填写完成后，最重要的一步来了，需要你填写电话号码进行短信验证。电话列表里面虽然有中国选项，但是当你填写国内号码是你会发现提示你：<del>‘OpenAI’s services are not available in your country.’</del>，对，不支持国内号码，所以这个时候你就需要购买一个国外的电话号码。</p><p><img src="../assets/20221208/4.png" alt="电话信息"></p><h3 id="购买国外虚拟号码"><a href="#购买国外虚拟号码" class="headerlink" title="购买国外虚拟号码"></a>购买国外虚拟号码</h3><p>登录注册<a href="https://sms-activate.org/cn" target="_blank" rel="noopener">https://sms-activate.org/cn</a> 网站，里面有各种需要的号码。目前找到最便宜的是印度的号码，只需要0.85元（截止到2022年12月8日）。购买国外点好号码流程如下：</p><ol><li>登录注册上面的网站地址</li><li>点击右上角余额进行充值（支持支付宝支付，但是最低1美元起）</li><li>点击左侧的搜索框，输入OpenAI，点击搜索到的内容</li><li>选择一个你想要购买的国家，点击列表右边的购物车即可（我购买的是India的，最便宜）</li><li>然后页面中就会显示分配给你的电话号码，在进行接下来的操作</li></ol><p><img src="../assets/20221208/5.png" alt="搜索OpenAI"></p><p><img src="../assets/20221208/6.png" alt="点击购物车购买"></p><h3 id="复制号码进行验证"><a href="#复制号码进行验证" class="headerlink" title="复制号码进行验证"></a>复制号码进行验证</h3><p>复制上文加入到购物车的虚拟电话号码。其中前两位代表的是区号，后面几位才是实际意义上的电话号码。复制号码到你在OpenAI的验证号码页面，然后进行验证。点击‘Send Code’后应该就会在你的<a href="https://sms-activate.org/cn" target="_blank" rel="noopener">https://sms-activate.org/cn</a> 页面收到验证码，然后输入OpenAI注册验证即可（如果没有收到验证码，在二十分钟之内虚拟号码是可以免费更换的，我是一次就通过了，很快几秒钟就收到）。</p><p><img src="../assets/20221208/7.png" alt="验证码，电哈号码信息"></p><p>就这样，一切顺利，一分钟之内就可以注册完成。然后就可以体验ChatGPT的强大功能了。当你尝试后也许会落寞，因为它的确很轻大，强大到可能真的要替换部分人工工作。甚至搜索引擎都可以代替了，而且还没有广告。</p><p>我也尝试着让它帮忙输出一些JavaScript代码，真的很nice，而且还帮忙写了一首情诗。关于更强大的功能，后续慢慢摸索吧。</p><p><img src="../assets/20221208/8.png" alt="输出JavaScript程序"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近大火的ChatGPT项目强烈的吸引了我的注意力。于是乎就尝试的注册了一个账号，然后你会发现，能让你玩一天。什么取代搜索引擎，取代程序员都不是危言耸听的话。&lt;/p&gt;
-&lt;p&gt;开始之前先简单了解一下什么是ChatGPT：OpenAI的一个人工智能项目，说是能直接生成代码、自动修复bug、在线问诊、模仿名人写作甚至代替各大搜索引擎的一个人工智能项目。ChatGPT 是 OpenAI 训练的对话式大规模&lt;a href=&quot;https://so.csdn.net/so/search?q=语言模型&amp;spm=1001.2101.3001.7020&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;语言模型&lt;/a&gt;，以对话的方式进行交互。它和之前的另一款模型 InstructGPT 属于同级模型，代表“GPT 3.5”代。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="https://mengnn.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="人工智能" scheme="https://mengnn.cn/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-      <category term="openai" scheme="https://mengnn.cn/tags/openai/"/>
-    
-      <category term="ChatGPT" scheme="https://mengnn.cn/tags/ChatGPT/"/>
     
   </entry>
   
