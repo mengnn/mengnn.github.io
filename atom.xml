@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mengnn.cn/"/>
-  <updated>2024-12-26T02:21:20.076Z</updated>
+  <updated>2025-01-17T06:43:43.745Z</updated>
   <id>https://mengnn.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue3+Element-plus实现自定义图片上传</title>
+    <link href="https://mengnn.cn/Vue3+Element-plus%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/"/>
+    <id>https://mengnn.cn/Vue3+Element-plus实现自定义图片上传/</id>
+    <published>2025-01-17T06:28:23.551Z</published>
+    <updated>2025-01-17T06:43:43.745Z</updated>
+    
+    <content type="html"><![CDATA[<p>默认已经安装好各种依赖，主要用到<code>element-plus</code>、<code>axios</code>。</p><p>通过<code>Upload</code>组件的<code>http-request</code>属性实现自定义图片上传请求功能。</p><a id="more"></a><p>代码实现：</p><p>通过自定义的<code>uploadRequest</code>方法，来实现图片上传和回显。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;el-form :model=&quot;editForm&quot;&gt;</span><br><span class="line">        &lt;el-form-item label=&quot;图片上传：&quot;&gt;</span><br><span class="line">            &lt;img :src=&quot;editForm.imageLink&quot; class=&quot;imgBox&quot;&gt;</span><br><span class="line">            &lt;el-upload</span><br><span class="line">                       :http-request=&quot;uploadRequest&quot;</span><br><span class="line">                       :limit=&quot;1&quot;</span><br><span class="line">                       v-model:file-list=&quot;fileList&quot;</span><br><span class="line">                       &gt;</span><br><span class="line">                &lt;el-button type=&quot;primary&quot;&gt;上传图片&lt;/el-button&gt;</span><br><span class="line">            &lt;/el-upload&gt;</span><br><span class="line">        &lt;/el-form-item&gt;</span><br><span class="line">    &lt;/el-form&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script setup&gt;</span><br><span class="line">    import axios from &apos;axios&apos;</span><br><span class="line">    import &#123;onMounted, reactive,ref&#125; from &apos;vue&apos;</span><br><span class="line">    //定义一个响应式数组用来接收图片</span><br><span class="line">    const fileList = ref([])</span><br><span class="line">    const editForm = reactive(&#123;</span><br><span class="line">        imageLink: &apos;&apos;,</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    // 自定义图片方法</span><br><span class="line">    function uploadRequest(options)&#123;</span><br><span class="line">        const &#123;file&#125; = options;</span><br><span class="line">        let applyFile = new FormData();</span><br><span class="line">        applyFile.append(&apos;applyFile&apos;, file);</span><br><span class="line">        </span><br><span class="line">        axios.post(&apos;http://localhost/api&apos;, applyFile,&#123;</span><br><span class="line">        headers: &#123;</span><br><span class="line">            &quot;Content-Type&quot;: &quot;multipart/form-data&quot;</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;).then(res=&gt;&#123;</span><br><span class="line">            editForm.imageLink = res.data.fileURL</span><br><span class="line">            // 上传成功获取回显值后要置空，否则二次上传会有问题</span><br><span class="line">            normalFileList.value = []</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.imgBox &#123;</span><br><span class="line">    width: 30px;</span><br><span class="line">    height: 30px;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;默认已经安装好各种依赖，主要用到&lt;code&gt;element-plus&lt;/code&gt;、&lt;code&gt;axios&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;Upload&lt;/code&gt;组件的&lt;code&gt;http-request&lt;/code&gt;属性实现自定义图片上传请求功能。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://mengnn.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="图片上传" scheme="https://mengnn.cn/tags/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/"/>
+    
+      <category term="Vue3" scheme="https://mengnn.cn/tags/Vue3/"/>
+    
+      <category term="element-plus" scheme="https://mengnn.cn/tags/element-plus/"/>
+    
+  </entry>
   
   <entry>
     <title>数组常用方法合集，以及数组循环方法对比</title>
@@ -480,30 +507,6 @@
       <category term="前端" scheme="https://mengnn.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="Object" scheme="https://mengnn.cn/tags/Object/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一文搞懂什么是OpenID、UnionID和AppID</title>
-    <link href="https://mengnn.cn/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82%E4%BB%80%E4%B9%88%E6%98%AFOpenID,UnionID%E5%92%8CAppID/"/>
-    <id>https://mengnn.cn/一文搞懂什么是OpenID,UnionID和AppID/</id>
-    <published>2023-06-30T02:42:08.073Z</published>
-    <updated>2023-06-30T03:32:05.586Z</updated>
-    
-    <content type="html"><![CDATA[<p>微信或许已经是我们生活中不可或缺的一部分，在微信生态的不断壮大下（微信公众号，微信小程序，微信开放平台等），对于开发者来说，挑战也越来越多。而且对于微信开发中的OpenID、UnionID和AppID了解和使用也是非常重要的一个过程。</p><a id="more"></a><p>首先我们先看一下对于<strong>OpenID、UnionID和ApplID</strong>比较官方的解释：</p><p>AppID（应用ID）：AppID 是微信开放平台为每个注册的应用分配的唯一标识符。它是开发者在进行微信开发时所需的重要凭证，用于区分不同的应用和接入权限管理。</p><p>UnionID（统一用户标识）：UnionID 是一个跨应用、跨平台的用户唯一标识符。当用户同意授权后，通过 UnionID，开发者可以获取到用户在同一开放平台下不同应用的用户信息。</p><p>OpenID（用户标识）：OpenID 是用户在某个公众号（订阅号、服务号等）或小程序中的唯一标识符。它是用户和公众号/小程序之间的身份凭证，在开发过程中用于区分不同用户。</p><p>针对于上面三个，我们做一个简单的解释：</p><h3 id="1-OpenID"><a href="#1-OpenID" class="headerlink" title="1.OpenID"></a>1.OpenID</h3><p>用户的的唯一标识。不管是微信公众号，还是小程序。同一个用户，对于不同的公众号和小程序都会生成唯一的一个OpenID。</p><p>比如说你们公司有3个小程序（小程序1，小程序2，小程序3），针对于3个不同的用户A，用户B，用户C来说：</p><blockquote><p>小程序1：微信用户A会生成一个 OpenID_a1   微信用户B会生成一个 OpenID_b1</p><p>小程序2：微信用户A会生成一个 OpenID_a2   微信用户B会生成一个 OpenID_b2</p><p>小程序3：微信用户A会生成一个 OpenID_a3   微信用户B会生成一个 OpenID_b3</p></blockquote><p>也就是说，对于同一个用户，<strong>不同的小程序</strong>会生成<strong>不同的OpenID</strong>；同理，针对于同一个小程序，不同的用户，也会生成<strong>不同的OpenID</strong>。</p><p>当然，微信公众号也是同样的道理。</p><h3 id="2-UnionID"><a href="#2-UnionID" class="headerlink" title="2.UnionID"></a>2.UnionID</h3><p>一个跨应用、跨平台的用户唯一标识符。主要是针对于企业来说的，同一个企业下，不同的应用需要微信授权，这个时候就有可能需要用到UnionID。</p><p>比如说你们公司开发了三款App（App1，App2，App3），现在需要做微信授权登录，这个时候就需要把三个APP绑定到同一个微信开放平台主体下。那么这三个app针对于同一个用户授权登录的情况是会生成唯一的一个UnionID。</p><p>具体是这样的：</p><blockquote><p>App1：微信用户A  会生成OpenID_a1  会生成UnionID_1</p><p>App2：微信用户A  会生成OpenID_a2  会生成UnionID_1</p><p>App3：微信用户A  会生成OpenID_a3  会生成UnionID_1</p></blockquote><p>同一个开放平台下的不同应用，针对于同一个用户，会生成唯一的一个UnionID；也就是说，同一个开放平台下，就算有上百个应用，针对于同一个用户，UnionID都是同一个。</p><h3 id="3-AppID"><a href="#3-AppID" class="headerlink" title="3.AppID"></a>3.AppID</h3><p>AppID跟c端也就是我们用户来说就没有太大关系了，他主要针对于开发者来说。它是应用的唯一标识。</p><p>什么是应用的唯一标识，就是说，每当你注册一个微信公众号或者微信小程序的时候，都会生成一个不同的AppID，相当于我们人类的身份证一样，在这里它就是微信公众号或者小程序的“身份证”。</p><p>当开发者或者运营者操作的时候，可能会用到这个应用的唯一“身份证”。</p><p><strong>需要注意的是：</strong>AppID 是在开放平台创建应用时生成的，而 UnionID 和 OpenID 则是在用户授权登录后由微信服务器返回的标识符。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;微信或许已经是我们生活中不可或缺的一部分，在微信生态的不断壮大下（微信公众号，微信小程序，微信开放平台等），对于开发者来说，挑战也越来越多。而且对于微信开发中的OpenID、UnionID和AppID了解和使用也是非常重要的一个过程。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="前端" scheme="https://mengnn.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="微信开发" scheme="https://mengnn.cn/tags/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/"/>
-    
-      <category term="小程序" scheme="https://mengnn.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
